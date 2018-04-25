@@ -1,8 +1,10 @@
+
+
 public class Patient {
 //date ve age sonra eklenecek.
 	private String pName;
 	private String pSurname;
-	private int pId;
+	private int pId=0;  //id will increase.
 	private String username;
 	private double weight;
 	private double height;
@@ -25,14 +27,15 @@ public class Patient {
 	public int getpId() {
 		return pId;
 	}
-	public void setpId(int pId) {
-		this.pId = pId;
+	public void setpId() {	
+		//If else part will be add after Linked list created.
+		this.pId++;
 	}
 	//pId get set done
 	public String getusername() {
 		return this.getpName() + this.getpSurname() + this.getpId();
 	}
-	public void setusername() {
+	public void setusername() { //no parameter need.
 		this.username=this.getpName() + this.getpSurname() + this.getpId();
 		
 	}
@@ -55,7 +58,7 @@ public class Patient {
 	public double getBmi() {
 		return this.weight / (this.height * this.height) ;
 	}
-	public void setBmi() { //parameters need to calculate bmi.
+	public void setBmi() { //no parameters need.
 		
 		this.bmi =this.weight / (this.height * this.height); //bmi is calculated automatically.
 	}
@@ -65,14 +68,11 @@ public class Patient {
 		//default constructor
 	}
 	
-	public Patient(String pName, String pSurname, int pId, double weight, double height) {
+	public Patient(String pName, String pSurname, double weight, double height) {
 		
 		this.pName=pName;
 		this.pSurname=pSurname;
-		this.pId=pId;
 		this.weight=weight;
 		this.height=height;
 	}
-	
-	
 }
