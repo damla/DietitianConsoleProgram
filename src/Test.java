@@ -12,6 +12,7 @@ public class Test {
 		System.out.println(a.getBmi());
 		
 		System.out.println("kfjdksgh");
-
+		DietList d=new DietList();
+		System.out.println(d.getpId());
 	}
 }

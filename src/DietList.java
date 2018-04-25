@@ -10,8 +10,4 @@ public class DietList extends Patient{
 	public void setdList(String dList) {
 		this.dList = dList;
 	}
-	
-	
-	
-	
 }

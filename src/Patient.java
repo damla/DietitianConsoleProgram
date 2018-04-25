@@ -1,6 +1,6 @@
 
 
-public class Patient {
+public class Patient{
 //date ve age sonra eklenecek.
 	private String pName;
 	private String pSurname;
