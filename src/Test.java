@@ -6,5 +6,7 @@ public class Test {
 			
 		System.out.println(a.getusername());
 		System.out.println(a.getBmi());
+		
+		System.out.println("kfjdksgh");
 	}
 }
