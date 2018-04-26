@@ -14,7 +14,7 @@ public class Patient{
 	private Date birthdate=new Date();
 	private int age;
 	
-	public String getpName() {
+	public String getpName() { //Name and surname must be set before username.
 		return pName;
 	}
 	public void setpName(String pName) {
@@ -28,10 +28,10 @@ public class Patient{
 		this.pSurname = pSurname;
 	}
 	//pSurname get set done
-	public int getpId() {
+	public int getpId() { 
 		return pId;
 	}
-	public void setpId() {	
+	public void setpId() {	 //Id usernameden once eklenmeli.
 		//If else part will be add after Linked list created.
 		this.pId++;
 	}
@@ -92,7 +92,7 @@ public class Patient{
 			this.birthYear = yearInt;
 			this.setAge();
 		}catch (Exception e) {
-			System.out.println(e.getMessage() + " Please enter a valid date.");
+			System.out.println(e.getMessage());
 		}
 	}
 	//birthdate get set done
@@ -112,20 +112,18 @@ public class Patient{
 		
 		String newDate="";
 		Scanner sc=new Scanner(System.in);
-		while(this.age>90 || this.age<1) { //age'e bagla cunku yas surekli degisiyor.
+		while(this.age>90 || this.age<1) { 
 			System.out.println("Please enter a valid date:");
 			newDate=sc.nextLine();
 			this.setBirthdate(newDate);
 		}
 	}
-	
-	
+	//age get set done
 	public Patient() {
 		//default constructor
 	}
 	
-	public Patient(String pName, String pSurname, double weight, double height) {
-		
+	public Patient(String pName, String pSurname, double weight, double height) { //Maybe not going to use constructor because of console control.	
 		this.pName=pName;
 		this.pSurname=pSurname;
 		this.weight=weight;
