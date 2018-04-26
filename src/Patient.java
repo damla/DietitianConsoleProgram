@@ -11,6 +11,7 @@ public class Patient{
 	private double height;
 	private double bmi;
 	private Date birthdate=new Date();
+	private int age;
 	
 	public String getpName() {
 		return pName;
@@ -70,24 +71,47 @@ public class Patient{
 		return sdf2.format(birthdate);
 	}
 	
+	public int birthYear=0; //to calculate age
 	public void setBirthdate(String date) { //date set ettirirken formati oncesinde belirt, ona gore setlensin.
 		try {
+			
 			SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 			this.birthdate=sdf.parse(date);
+			
 			String s= date;
 			String year="";
 			for(int i=6 ; i<10 ; i++) { //To control the year interval, we get year part of date.
-			year += s.charAt(i);
+			
+				year += s.charAt(i);
 			}
+			//Example: year=1996 
 			int yearInt=Integer.parseInt(year); //parsed it to integer to control the interval.
+			this.birthYear = yearInt;
+			
 			if(yearInt<1920) //age'e bagla cunku yas surekli degisiyor.
 				System.out.println("Please enter a valid year.");
+			
 			//yearInt 'in buyuk olacagi araligi age hesapladiktan sonra yap.
 		}catch (Exception e) {
 			System.out.println(e.getMessage() + " Please enter a valid date.");
 		}
 	}
+	//birthdate get set done
 	
+	public int getAge() {  //Age'den once birthdate'i set etmeye dikkat!
+		return age;
+	}
+	public void setAge() {
+		
+		Date current=new Date();
+		SimpleDateFormat sdf= new SimpleDateFormat("yyyy");
+		
+		String currentString= sdf.format(current);
+		int currentYear= Integer.parseInt(currentString);
+		
+		this.age=currentYear-birthYear;
+
+	}
 	
 	public Patient() {
 		//default constructor
@@ -100,10 +124,5 @@ public class Patient{
 		this.weight=weight;
 		this.height=height;
 	}
+	
 }
-
-
-
-// yapilacaklar: Age get setlerini ayarla. Daha sonra ona gore setBirtdate methodunun 
-// if else durumunu bu yastan buyuk olamaz seklinde duzenle. Ayrica integera parse etme
-// gibi olaylar ayri methoddan yazilip cagirilabilir.(Duzenli kod olmasi icin)
