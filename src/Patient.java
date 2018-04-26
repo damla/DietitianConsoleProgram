@@ -1,5 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Patient{
 //date ve age sonra eklenecek.
@@ -80,18 +81,16 @@ public class Patient{
 			
 			String s= date;
 			String year="";
+			
 			for(int i=6 ; i<10 ; i++) { //To control the year interval, we get year part of date.
 			
 				year += s.charAt(i);
 			}
 			//Example: year=1996 
+			
 			int yearInt=Integer.parseInt(year); //parsed it to integer to control the interval.
 			this.birthYear = yearInt;
-			
-			if(yearInt<1920) //age'e bagla cunku yas surekli degisiyor.
-				System.out.println("Please enter a valid year.");
-			
-			//yearInt 'in buyuk olacagi araligi age hesapladiktan sonra yap.
+			this.setAge();
 		}catch (Exception e) {
 			System.out.println(e.getMessage() + " Please enter a valid date.");
 		}
@@ -101,7 +100,7 @@ public class Patient{
 	public int getAge() {  //Age'den once birthdate'i set etmeye dikkat!
 		return age;
 	}
-	public void setAge() {
+	public void setAge() { //Hata age kisminda verilecek.
 		
 		Date current=new Date();
 		SimpleDateFormat sdf= new SimpleDateFormat("yyyy");
@@ -110,8 +109,16 @@ public class Patient{
 		int currentYear= Integer.parseInt(currentString);
 		
 		this.age=currentYear-birthYear;
-
+		
+		String newDate="";
+		Scanner sc=new Scanner(System.in);
+		while(this.age>90 || this.age<1) { //age'e bagla cunku yas surekli degisiyor.
+			System.out.println("Please enter a valid date:");
+			newDate=sc.nextLine();
+			this.setBirthdate(newDate);
+		}
 	}
+	
 	
 	public Patient() {
 		//default constructor
