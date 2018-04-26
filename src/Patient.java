@@ -76,9 +76,13 @@ public class Patient{
 			this.birthdate=sdf.parse(date);
 			String s= date;
 			String year="";
-			for(int i=6 ; i<10 ; i++) {
+			for(int i=6 ; i<10 ; i++) { //To control the year interval, we get year part of date.
 			year += s.charAt(i);
 			}
+			int yearInt=Integer.parseInt(year); //parsed it to integer to control the interval.
+			if(yearInt<1920) //age'e bagla cunku yas surekli degisiyor.
+				System.out.println("Please enter a valid year.");
+			//yearInt 'in buyuk olacagi araligi age hesapladiktan sonra yap.
 		}catch (Exception e) {
 			System.out.println(e.getMessage() + " Please enter a valid date.");
 		}
@@ -97,3 +101,9 @@ public class Patient{
 		this.height=height;
 	}
 }
+
+
+
+// yapilacaklar: Age get setlerini ayarla. Daha sonra ona gore setBirtdate methodunun 
+// if else durumunu bu yastan buyuk olamaz seklinde duzenle. Ayrica integera parse etme
+// gibi olaylar ayri methoddan yazilip cagirilabilir.(Duzenli kod olmasi icin)
