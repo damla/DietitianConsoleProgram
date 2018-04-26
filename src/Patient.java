@@ -134,7 +134,13 @@ public class Patient{
 	
 	public void setDietList(DietList list) {
 		this.list=list;
+		list.setpId(this.getpId());
+		list.setBmi(this.getBmi());
+		list.setpName(this.getpName());
+		list.setpSurname(this.getpSurname());
+		list.setAge(this.getAge());
 	}
+	
 	public DietList getDietList() {
 		return list;
 	}
