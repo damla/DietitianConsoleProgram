@@ -3,17 +3,21 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Patient{
-//date ve age sonra eklenecek.
+/* Sonradan eklenebilecekler:
+ * Isim soyisim icin bosluk kontrolu, weight,height icin kontrol.
+ * telefon eklenecek. Onun icin regex eklenebilir.
+ */
 	private String pName;
 	private String pSurname;
 	private int pId=0;  //id will increase.
 	private String username;
-	private double weight;
+	private double weight; 
 	private double height;
 	private double bmi;
 	private Date birthdate=new Date();
 	private int age;
-	
+	private String phoneNo;
+	private DietList list;
 	public String getpName() { //Name and surname must be set before username.
 		return pName;
 	}
@@ -31,7 +35,7 @@ public class Patient{
 	public int getpId() { 
 		return pId;
 	}
-	public void setpId() {	 //Id usernameden once eklenmeli.
+	public void setpId() { //Id must be added before username.
 		//If else part will be add after Linked list created.
 		this.pId++;
 	}
@@ -44,7 +48,6 @@ public class Patient{
 		
 	}
 	//username get set done
-	
 	public double getWeight() {
 		return weight;
 	}
@@ -119,8 +122,27 @@ public class Patient{
 		}
 	}
 	//age get set done
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+	public void setPhoneNo(String phoneNo) { //String ile kontrol saglanacak.
+		if(phoneNo=="" || phoneNo==" ")
+			System.out.println("Please enter a phone number: ");
+		
+		this.phoneNo = phoneNo;
+	}
+	
+	public void setDietList(DietList list) {
+		this.list=list;
+	}
+	public DietList getDietList() {
+		return list;
+	}
+	
 	public Patient() {
+		
 		//default constructor
+		
 	}
 	
 	public Patient(String pName, String pSurname, double weight, double height) { //Maybe not going to use constructor because of console control.	
