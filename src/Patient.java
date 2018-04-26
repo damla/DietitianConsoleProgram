@@ -1,4 +1,5 @@
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Patient{
 //date ve age sonra eklenecek.
@@ -9,6 +10,7 @@ public class Patient{
 	private double weight;
 	private double height;
 	private double bmi;
+	private Date birthdate=new Date();
 	
 	public String getpName() {
 		return pName;
@@ -32,10 +34,10 @@ public class Patient{
 		this.pId++;
 	}
 	//pId get set done
-	public String getusername() {
+	public String getUsername() {
 		return this.getpName() + this.getpSurname() + this.getpId();
 	}
-	public void setusername() { //no parameter need.
+	public void setUsername() { //no parameter need.
 		this.username=this.getpName() + this.getpSurname() + this.getpId();
 		
 	}
@@ -63,6 +65,25 @@ public class Patient{
 		this.bmi =this.weight / (this.height * this.height); //bmi is calculated automatically.
 	}
 	//bmi get set done
+	public String getBirthdate() { //We get parsed sdf in set method. Get it as formatted.
+		SimpleDateFormat sdf2=new SimpleDateFormat("dd/MM/yyyy");
+		return sdf2.format(birthdate);
+	}
+	
+	public void setBirthdate(String date) { //date set ettirirken formati oncesinde belirt, ona gore setlensin.
+		try {
+			SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
+			this.birthdate=sdf.parse(date);
+			String s= date;
+			String year="";
+			for(int i=6 ; i<10 ; i++) {
+			year += s.charAt(i);
+			}
+		}catch (Exception e) {
+			System.out.println(e.getMessage() + " Please enter a valid date.");
+		}
+	}
+	
 	
 	public Patient() {
 		//default constructor
