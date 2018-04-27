@@ -5,7 +5,7 @@ public class Test{
 		//1st patient
 		Patient d=new Patient("Damla","Koksal",51,1.61);
 		
-		d.setBirthdate("10/10/1996");
+		d.setBirthdate("10/10/1996"); 
 		d.setBmi();
 		d.setUsername();
 		System.out.println("Username: "+ d.getUsername() +
@@ -37,7 +37,8 @@ public class Test{
 		//patient object test ended here.
 		System.out.println("------------------------- ");
 		DietList a=new DietList();
-		a.setdList("diyet listesi bu");
+		a.setdList("");
+		a.setBmi();
 		d.setDietList(a);
 		System.out.println(d.getDietList());
 		//Diet object test ended here.

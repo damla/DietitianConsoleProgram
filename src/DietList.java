@@ -1,6 +1,7 @@
 
 public class DietList extends Patient{
-
+	//When dietList object is created with a parent object, it will take that objects common properties.
+	//We just have to set dList.
 	private String dList;
 	private int pId;
 	private double bmi;
@@ -13,10 +14,12 @@ public class DietList extends Patient{
 	}
 
 	public void setdList(String dList) {
-		this.dList = dList;
+		if(dList=="" || dList==" ")
+			this.dList="List is empty.";
+		else
+			this.dList = dList;
 	}
 
-	
 	public int getpId() {
 		return pId;
 	}
