@@ -1,17 +1,19 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Patient{
 /* Sonradan eklenebilecekler:
  * Isim soyisim icin bosluk kontrolu, weight,height icin kontrol.
  * telefon eklenecek. Onun icin regex eklenebilir.
  */
+	private static AtomicInteger uniqueId=new AtomicInteger(); //silme islemlerinde indir denilebilir
 	private String pName;
 	private String pSurname;
-	private int pId=0;  //id will increase.
+	private int pId;  //id will increase.
 	private String username;
-	private double weight; 
+	private double weight;
 	private double height;
 	private double bmi;
 	private Date birthdate=new Date();
@@ -35,10 +37,13 @@ public class Patient{
 	public int getpId() { 
 		return pId;
 	}
-	public void setpId() { //Id must be added before username.
+	
+	/*public void setpId() { //Id must be added before username.
 		//If else part will be add after Linked list created.
-		this.pId++;
-	}
+		this.getpId();
+	}*/  
+	//set gerekmiyor?
+	
 	//pId get set done
 	public String getUsername() {
 		return this.getpName() + this.getpSurname() + this.getpId();
@@ -146,12 +151,13 @@ public class Patient{
 	}
 	
 	public Patient() {
-		
+		pId=uniqueId.incrementAndGet();
 		//default constructor
 		
 	}
 	
 	public Patient(String pName, String pSurname, double weight, double height) { //Maybe not going to use constructor because of console control.	
+		pId=uniqueId.incrementAndGet();
 		this.pName=pName;
 		this.pSurname=pSurname;
 		this.weight=weight;
