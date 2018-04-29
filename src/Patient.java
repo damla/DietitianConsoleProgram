@@ -18,6 +18,8 @@ public class Patient{
 	private int age;
 	private String phoneNo;
 	private DietList list;
+
+	
 	public String getpName() { //Name and surname must be set before username.
 		return pName;
 	}
@@ -138,6 +140,9 @@ public class Patient{
 	public DietList getDietList() {
 		return list;
 	}
+	
+	
+	
 	
 	public Patient() {
 		

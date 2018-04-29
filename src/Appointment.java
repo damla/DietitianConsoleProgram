@@ -2,15 +2,12 @@ import java.sql.Date;
 
 public class Appointment extends Patient
 {
-	
+	//Date ve Time oluþturuldu.
 	private Date date; 
 	private String time; 
-	 public String getTime() {
+	public String getTime() {
 		return time;
 	}
-
-
-
 	public Appointment(Date date) {
 	        this.date = date;
 	        this.time = time;
@@ -27,5 +24,6 @@ public class Appointment extends Patient
 		this.time = time;
 		
 	}
+	
 
 }
