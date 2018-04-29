@@ -1,6 +1,7 @@
 
 public class Node {
-
+	//this code is taken from our teacher's codes to implement our project.
+	//We did not started to work on doubly linked list yet.
 	 protected int data;
 	   protected Node next, prev;
 	 

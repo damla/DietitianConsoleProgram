@@ -1,6 +1,7 @@
 
 public class DoublyLinkedList {
-	
+	//this code is taken from our teacher's codes to implement our project.
+	//We did not started to work on doubly linked list yet.
 	    protected Node start;
 	    protected Node end ;
 	    public int size;
