@@ -8,10 +8,7 @@ public class Appointment extends Patient
 	public String getTime() {
 		return time;
 	}
-	public Appointment(Date date) {
-	        this.date = date;
-	        this.time = time;
-	    }
+
 
 	public Date getDate() {
 		return date;

@@ -1,17 +1,18 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Patient{
 /* Sonradan eklenebilecekler:
  * Isim soyisim icin bosluk kontrolu, weight,height icin kontrol.
- * telefon eklenecek. Onun icin regex eklenebilir.
  */
+	private static AtomicInteger uniqueId=new AtomicInteger(); //for the delete of users, we can maybe use decrease property of AtomicInteger.
 	private String pName;
 	private String pSurname;
-	private int pId=0;  //id will increase.
+	private int pId;  //id will increase.
 	private String username;
-	private double weight; 
+	private double weight;
 	private double height;
 	private double bmi;
 	private Date birthdate=new Date();
@@ -24,6 +25,14 @@ public class Patient{
 		return pName;
 	}
 	public void setpName(String pName) {
+		Scanner sc=new Scanner(System.in);
+		String pattern = "(?<=\\\\s|^)[a-zA-Z]*(?=[.,;:]?\\\\s|$)" ; //Regex for only alphabetical characters.
+		
+		while(pName=="" || !pName.matches(pattern)) {
+			System.out.println("Please enter a valid name: ");
+			pName=sc.nextLine();
+		}
+		
 		this.pName = pName;
 	}
 	//pName get set done
@@ -31,16 +40,26 @@ public class Patient{
 		return pSurname;
 	}
 	public void setpSurname(String pSurname) {
+		Scanner sc=new Scanner(System.in);
+		String pattern = "(?<=\\\\s|^)[a-zA-Z]*(?=[.,;:]?\\\\s|$)" ; //Regex for only alphabetical characters.
+		
+		while(pSurname=="" || !pSurname.matches(pattern)) {
+			System.out.println("Please enter a valid surname: ");
+			pSurname=sc.nextLine();
+		}
+		
 		this.pSurname = pSurname;
 	}
 	//pSurname get set done
-	public int getpId() { 
+	public int getpId() { //Id must be added before username.
 		return pId;
 	}
-	public void setpId() { //Id must be added before username.
-		//If else part will be add after Linked list created.
-		this.pId++;
+	
+	public void setpId(int pId) { //set will be use only in case of deleting patient or changing details.
+		this.pId= pId;
 	}
+
+	
 	//pId get set done
 	public String getUsername() {
 		return this.getpName() + this.getpSurname() + this.getpId();
@@ -96,6 +115,7 @@ public class Patient{
 			int yearInt=Integer.parseInt(year); //parsed it to integer to control the interval.
 			this.birthYear = yearInt;
 			this.setAge();
+
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -118,7 +138,7 @@ public class Patient{
 		String newDate="";
 		Scanner sc=new Scanner(System.in);
 		while(this.age>90 || this.age<1) { 
-			System.out.println("Please enter a valid date:");
+			System.out.println("Please enter a valid date: ");
 			newDate=sc.nextLine();
 			this.setBirthdate(newDate);
 		}
@@ -127,34 +147,55 @@ public class Patient{
 	public String getPhoneNo() {
 		return phoneNo;
 	}
-	public void setPhoneNo(String phoneNo) { //String ile kontrol saglanacak.
-		if(phoneNo=="" || phoneNo==" ")
-			System.out.println("Please enter a phone number: ");
+	public void setPhoneNo(String phoneNo) {
+		Scanner sc=new Scanner(System.in);
+		String pattern = "^[0]\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$" ; //Regex for phone numbers WITHOUT ZERO.
 		
-		this.phoneNo = phoneNo;
+		while(phoneNo=="" || phoneNo==" " || !phoneNo.matches(pattern)) { //Turns until the true number entered.
+			System.out.println("Please enter a valid phone number: ");
+			phoneNo=sc.nextLine();
+		}
+		
+		this.phoneNo=phoneNo; //after the controls, phone number is setted.
+		
+		/* --Regex Notes--
+		 * 	Start with zero.
+		 *  May start with an option "("
+		 *  Followed by 3 digits
+		 *  May have an optional ")"
+		 *  May have an optional "-" after the first 3 digits or after optional ) character
+		 *  Followed by 3 digits.
+		 *  May have another optional "-" after numeric digits
+		 *  ends with four digits
+		 *  Example : 0(212)222-2222
+		 * */
 	}
 	
 	public void setDietList(DietList list) {
 		this.list=list;
+		list.setpId(this.getpId());
+		list.setBmi(this.getBmi());
+		list.setpName(this.getpName());
+		list.setpSurname(this.getpSurname());
+		list.setAge(this.getAge());
 	}
+	
 	public DietList getDietList() {
 		return list;
 	}
 	
 	
-	
-	
 	public Patient() {
-		
+		pId=uniqueId.incrementAndGet();
 		//default constructor
 		
 	}
 	
 	public Patient(String pName, String pSurname, double weight, double height) { //Maybe not going to use constructor because of console control.	
-		this.pName=pName;
-		this.pSurname=pSurname;
+		pId=uniqueId.incrementAndGet();											// Or we can set everything here
+		this.setpName(pName);
+		this.setpSurname(pSurname);
 		this.weight=weight;
 		this.height=height;
-	}
-	
+	}	
 }
