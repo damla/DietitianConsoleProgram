@@ -5,7 +5,7 @@ public class Test{
 // biliriz.
 	public static void main(String[]args) {
 		//1st patient
-		Patient d=new Patient("","",51,1.61);
+		Patient d=new Patient("damla","koksal",51,1.61);
 		
 		d.setBirthdate("10/10/1996"); 
 		d.setBmi();
@@ -41,7 +41,36 @@ public class Test{
 		//patient object test ended here.
 		System.out.println("------------------------- ");
 		DietList a=new DietList();
-		a.setdList("");
+		a.setdList("\nSABAH\n" +
+				"-------\n" +
+				"1 dilim tam çavdar ekmeği\n"
+				+ "2 parmak kadar az yağlı dil peyniri\n"
+				+ "5 adet zeytin\n" + 
+				"Domates, yeşil biber, maydanoz\n" + 
+				"Şekersiz açık çay\n" + 
+				"\nARA\n" + 
+				"-------\n" +
+				"2 tam ceviz\n" + 
+				"\nÖĞLE\n" + 
+				"-------\n" +
+				"1 tabak zeytinyağlı sebze\n" + 
+				"1 kase cacık veya ayran\n" + 
+				"Çoban salata (1 tatlı kaşığı zeytinyağı)\n" + 
+				"1 dilim çavdar ekmeği\n" + 
+				"\nARA\n" + 
+				"-------\n" +
+				"1 küçük armut (bol tarçınlı)\n" + 
+				"1 dilim az yağlı beyaz peynir\n" + 
+				"1 kepekli girsini\n" + 
+				"\nAKŞAM\n" + 
+				"-------\n" +
+				"Izgara balık (180-200 gr.)\n" + 
+				"4 adet buharda roka ve yeşil salata\n" + 
+				"(1 tatlı kaşığı zeytinyağı ile)\n" + 
+				"\nARA\n" + 
+				"-------\n" +
+				"Yarım muz\n" + 
+				"10 taze badem");
 		a.setBmi();
 		d.setDietList(a);
 		System.out.println(d.getDietList());
