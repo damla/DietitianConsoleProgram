@@ -1,6 +1,7 @@
 
 public class Test{
-
+// for dongusuyle giris yaptiririz. treeye eklemek icin id kullanacagimizi ele alirsak kullanicilara atanan en son id numarasini kayit ettirerek ordan eklemeye devam etmesini saglaya_
+// biliriz.
 	public static void main(String[]args) {
 		//1st patient
 		Patient d=new Patient("Damla","Koksal",51,1.61);
@@ -32,7 +33,7 @@ public class Test{
 				   "\nWeight: " + o.getWeight() +
 				   "\nHeight: " + o.getHeight() +
 				   "\nBmi: " + o.getBmi() +
-				   "\nId: " + o.getpId());
+				   "\nId: " + o.getpId()); 
 		//id obje mi olmali?
 		//patient object test ended here.
 		System.out.println("------------------------- ");
