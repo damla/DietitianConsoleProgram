@@ -9,7 +9,6 @@ public class Appointment extends Patient
 		return time;
 	}
 
-
 	public Date getDate() {
 		return date;
 	}
