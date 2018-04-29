@@ -5,8 +5,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Patient{
 /* Sonradan eklenebilecekler:
- * Isim soyisim icin bosluk kontrolu, weight,height icin kontrol.
- */
+ *weight,height icin kontrol.
+*/
 	private static AtomicInteger uniqueId=new AtomicInteger(); //for the delete of users, we can maybe use decrease property of AtomicInteger.
 	private String pName;
 	private String pSurname;
@@ -32,8 +32,8 @@ public class Patient{
 			System.out.println("Please enter a valid name: ");
 			pName=sc.nextLine();
 		}
-		
 		this.pName = pName;
+		
 	}
 	//pName get set done
 	public String getpSurname() {
@@ -73,6 +73,7 @@ public class Patient{
 		return weight;
 	}
 	public void setWeight(double weight) {
+		
 		this.weight = weight;
 	}
 	//weight get set done
