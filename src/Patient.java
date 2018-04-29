@@ -23,6 +23,14 @@ public class Patient{
 		return pName;
 	}
 	public void setpName(String pName) {
+		Scanner sc=new Scanner(System.in);
+		String pattern = "(?<=\\\\s|^)[a-zA-Z]*(?=[.,;:]?\\\\s|$)" ; //Regex for only alphabetical characters.
+		
+		while(pName=="" || !pName.matches(pattern)) {
+			System.out.println("Please enter a valid name: ");
+			pName=sc.nextLine();
+		}
+		
 		this.pName = pName;
 	}
 	//pName get set done
@@ -30,6 +38,14 @@ public class Patient{
 		return pSurname;
 	}
 	public void setpSurname(String pSurname) {
+		Scanner sc=new Scanner(System.in);
+		String pattern = "(?<=\\\\s|^)[a-zA-Z]*(?=[.,;:]?\\\\s|$)" ; //Regex for only alphabetical characters.
+		
+		while(pSurname=="" || !pSurname.matches(pattern)) {
+			System.out.println("Please enter a valid surname: ");
+			pSurname=sc.nextLine();
+		}
+		
 		this.pSurname = pSurname;
 	}
 	//pSurname get set done
@@ -173,9 +189,9 @@ public class Patient{
 	}
 	
 	public Patient(String pName, String pSurname, double weight, double height) { //Maybe not going to use constructor because of console control.	
-		pId=uniqueId.incrementAndGet();
-		this.pName=pName;
-		this.pSurname=pSurname;
+		pId=uniqueId.incrementAndGet();											// Or we can set everything here
+		this.setpName(pName);
+		this.setpSurname(pSurname);
 		this.weight=weight;
 		this.height=height;
 	}	

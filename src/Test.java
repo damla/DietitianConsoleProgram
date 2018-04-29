@@ -5,12 +5,12 @@ public class Test{
 // biliriz.
 	public static void main(String[]args) {
 		//1st patient
-		Patient d=new Patient("Damla","Koksal",51,1.61);
+		Patient d=new Patient("","",51,1.61);
 		
 		d.setBirthdate("10/10/1996"); 
 		d.setBmi();
 		d.setUsername();
-		d.setPhoneNo("0(212)222222");
+		d.setPhoneNo("0(212)222-2222");
 		System.out.println("Username: "+ d.getUsername() +
 						   "\nName: "+ d.getpName() +
 						   "\nSurname: "+ d.getpSurname() +
@@ -49,14 +49,14 @@ public class Test{
 		
 		//regex test
 		/*Scanner sc= new Scanner(System.in);
-		System.out.println("Gir");
-		String phone=sc.nextLine();
-		String pattern = "^[0]\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$"; //Regex for phone numbers WITHOUT ZERO.
-		if(phone=="" || phone==" " || !phone.matches(pattern))
+		System.out.println("isim Gir");
+		String name=sc.nextLine();
+		String pattern = "(?<=\\s|^)[a-zA-Z]*(?=[.,;:]?\\s|$)"; //Regex for phone numbers WITHOUT ZERO.
+		if(name=="" || name==" " || !name.matches(pattern))
 			System.out.println("problem var");
 		else
 			System.out.println("problem yok");
-			*/
+		*/	
 
 	}
 }
