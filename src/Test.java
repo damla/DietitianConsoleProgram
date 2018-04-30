@@ -50,8 +50,6 @@ public class Test{
 		
 		//Diet object test ended here.
 		
-		
-		
 		Appointment b=new Appointment();
 		b.setDate("30/04/2018");
 		b.setTime("22:50");

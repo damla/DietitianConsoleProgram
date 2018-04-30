@@ -129,6 +129,7 @@ public class DoublyLinkedList {
 	            System.out.print("empty\n");
 	            return;
 	        }
+	        
 	        if (start.getLinkNext() == null) 
 	        {
 	            System.out.println(start.getData() );
@@ -143,6 +144,5 @@ public class DoublyLinkedList {
 	            ptr = ptr.getLinkNext();
 	        }
 	        System.out.print(ptr.getData()+ "\n");
-	    
 	    }
 }
