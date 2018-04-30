@@ -42,41 +42,20 @@ public class Test{
 		//patient object test ended here.
 		System.out.println("------------------------- ");
 		DietList a=new DietList();
-		a.setdList("\nSABAH\n" +
-				"-------\n" +
-				"1 dilim tam Ã§avdar ekmeÄŸi\n"
-				+ "2 parmak kadar az yaÄŸlÄ± dil peyniri\n"
-				+ "5 adet zeytin\n" + 
-				"Domates, yeÅŸil biber, maydanoz\n" + 
-				"Å�ekersiz aÃ§Ä±k Ã§ay\n" + 
-				"\nARA\n" + 
-				"-------\n" +
-				"2 tam ceviz\n" + 
-				"\nÃ–Ä�LE\n" + 
-				"-------\n" +
-				"1 tabak zeytinyaÄŸlÄ± sebze\n" + 
-				"1 kase cacÄ±k veya ayran\n" + 
-				"Ã‡oban salata (1 tatlÄ± kaÅŸÄ±ÄŸÄ± zeytinyaÄŸÄ±)\n" + 
-				"1 dilim Ã§avdar ekmeÄŸi\n" + 
-				"\nARA\n" + 
-				"-------\n" +
-				"1 kÃ¼Ã§Ã¼k armut (bol tarÃ§Ä±nlÄ±)\n" + 
-				"1 dilim az yaÄŸlÄ± beyaz peynir\n" + 
-				"1 kepekli girsini\n" + 
-				"\nAKÅ�AM\n" + 
-				"-------\n" +
-				"Izgara balÄ±k (180-200 gr.)\n" + 
-				"4 adet buharda roka ve yeÅŸil salata\n" + 
-				"(1 tatlÄ± kaÅŸÄ±ÄŸÄ± zeytinyaÄŸÄ± ile)\n" + 
-				"\nARA\n" + 
-				"-------\n" +
-				"YarÄ±m muz\n" + 
-				"10 taze badem");
+		a.setdList("");
 		a.setBmi();
 		d.setDietList(a);
 		System.out.println(d.getDietList());
+
 		
 		//Diet object test ended here.
+		
+		Appointment b=new Appointment();
+		b.setDate("30/04/2018");
+		b.setTime("22:50");
+		d.setDateTime(b);
+		System.out.println("--------------------------");
+		System.out.println(d.getDateTime());
 		
 		//regex test
 		/*Scanner sc= new Scanner(System.in);

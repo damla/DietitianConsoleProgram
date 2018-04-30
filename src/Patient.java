@@ -19,6 +19,7 @@ public class Patient{
 	private int age;
 	private String phoneNo;
 	private DietList list;
+	private Appointment dateTime;
 
 	
 	public String getpName() { //Name and surname must be set before username.
@@ -121,6 +122,9 @@ public class Patient{
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	
+	
 	//birthdate get set done
 	
 	public int getAge() {  //Age'den once birthdate'i set etmeye dikkat!
@@ -186,6 +190,18 @@ public class Patient{
 	}
 	
 	
+	public Appointment getDateTime() {
+		return dateTime;
+	}
+	
+	public void setDateTime(Appointment dateTime) {
+		this.dateTime = dateTime;
+		dateTime.setpId(this.getpId());
+		dateTime.setpName(this.getpName());
+		dateTime.setpSurname(this.getpSurname());
+
+	}
+
 	public Patient() {
 		pId=uniqueId.incrementAndGet();
 		//default constructor
