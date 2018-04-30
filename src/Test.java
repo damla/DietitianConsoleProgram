@@ -46,9 +46,19 @@ public class Test{
 		a.setBmi();
 		d.setDietList(a);
 		System.out.println(d.getDietList());
+
 		
 		//Diet object test ended here.
 		
+		
+		
+		Appointment b=new Appointment();
+		b.setDate("30/04/2018");
+		b.setTime("22:50");
+		d.setDateTime(b);
+		System.out.println("--------------------------");
+		System.out.println(d.getDateTime());
+		   
 		//regex test
 		/*Scanner sc= new Scanner(System.in);
 		System.out.println("isim Gir");

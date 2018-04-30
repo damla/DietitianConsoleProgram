@@ -1,25 +1,53 @@
-import java.sql.Date;
+import java.util.Date;
+
+import java.text.SimpleDateFormat;
 
 public class Appointment extends Patient
 {
 	//Date ve Time oluþturuldu.
-	private Date date; 
-	private String time; 
-	public String getTime() {
-		return time;
+	
+	private Date date =new Date(); 
+	private Date time=new Date(); 
+
+
+	public String getDate()
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		return sdf.format(date);
 	}
 
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-	public void setTime(String time) {
-		this.time = time;
-		
+	public void setDate(String date) {
+		try {
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			this.date = sdf.parse(date); // date stringe çevirdik
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
+	public void setTime(String time) {
+		
+		try {
+		  SimpleDateFormat sdfDate = new SimpleDateFormat("HH:mm");
+		  
+		  this.time=sdfDate.parse(time);
+		  
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	public String getTime() {
+		SimpleDateFormat sdfDate = new SimpleDateFormat("HH:mm");
+		return sdfDate.format(time);
+	}
+	
+	public String toString() {
 
+		return  "Name: "+this.getpName() + 
+				"\nSurname: "+this.getpSurname() + 
+				"\nDate: " + this.getDate() +
+				"\nTime: "+ this.getTime() +
+				"\nID List: " + this.getpId();
+	}
 }
