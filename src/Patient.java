@@ -135,7 +135,7 @@ public class Patient{
 		Date current=new Date();
 		SimpleDateFormat sdf= new SimpleDateFormat("yyyy");
 		
-		String currentString= sdf.format(current);
+		String currentString= sdf.format(current); //2018
 		int currentYear= Integer.parseInt(currentString);
 		
 		this.age=currentYear-birthYear;

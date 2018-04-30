@@ -6,6 +6,7 @@ public class Test{
 	
 	public static void main(String[]args) {
 		//1st patient
+		
 		Patient d=new Patient("damla","koksal",51,1.61);
 		
 		d.setBirthdate("10/10/1996"); 
@@ -39,24 +40,56 @@ public class Test{
 				   "\nHeight: " + o.getHeight() +
 				   "\nBmi: " + o.getBmi() +
 				   "\nId: " + o.getpId()); 
+		
+		System.out.println();
+		
+		//3nd patient
+		Patient k = new Patient("Demet","Ozbay",45,1.55);
+		k.setBirthdate("25/03/1992");
+		k.setBmi();
+		k.setUsername();
+		System.out.println("Username: "+ k.getUsername()+ "\nName: "+ k.getpName() +
+				   "\nSurname: "+ k.getpSurname() +
+				   "\nBirthdate: " + k.getBirthdate() +
+				   "\nAge: " + k.getAge() +
+				   "\nWeight: " + k.getWeight() +
+				   "\nHeight: " + k.getHeight() +
+				   "\nBmi: " + k.getBmi() +
+				   "\nId: " + k.getpId()); 
+		System.out.println();
+	
 		//patient object test ended here.
+		
 		System.out.println("------------------------- ");
 		DietList a=new DietList();
 		a.setdList("");
 		a.setBmi();
 		d.setDietList(a);
 		System.out.println(d.getDietList());
+		
+		
+		System.out.println("------------------------- ");
+		DietList c = new DietList();
+		c.setdList("");
+		c.setBmi();
+		k.setDietList(c);
+		System.out.println(k.getDietList());
 
 		
 		//Diet object test ended here.
-		
+
+		System.out.println("--------------------------");
+
 		Appointment b=new Appointment();
 		b.setDate("30/04/2018");
 		b.setTime("22:50");
-		d.setDateTime(b);
-		System.out.println("--------------------------");
-		System.out.println(d.getDateTime());
+		k.setDateTime(b);
+		System.out.println(k.getDateTime());
+		
 		   
+		//Appointment test ended here.
+		
+		
 		//regex test
 		/*Scanner sc= new Scanner(System.in);
 		System.out.println("isim Gir");
@@ -67,8 +100,6 @@ public class Test{
 		else
 			System.out.println("problem yok");
 		*/	
-
-
 		
 // Appointment için sorgular oluşturulacak . Kontrol yapısı / Yeni tarih
 
