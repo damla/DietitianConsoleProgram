@@ -8,7 +8,7 @@ public class Test{
 		//1st patient
 		Patient d=new Patient("damla","koksal",51,1.61);
 		
-		d.setBirthdate("10/10/1900"); 
+		d.setBirthdate("10/10/1996"); 
 		d.setBmi();
 		d.setUsername();
 		d.setPhoneNo("0(212)222-2222");
@@ -39,7 +39,11 @@ public class Test{
 				   "\nHeight: " + o.getHeight() +
 				   "\nBmi: " + o.getBmi() +
 				   "\nId: " + o.getpId()); 
+		
+		System.out.println();
+	
 		//patient object test ended here.
+		
 		System.out.println("------------------------- ");
 		DietList a=new DietList();
 		a.setdList("");
@@ -50,15 +54,19 @@ public class Test{
 		
 		//Diet object test ended here.
 		
-		
-		
+		System.out.println("--------------------------");
 		Appointment b=new Appointment();
 		b.setDate("30/04/2018");
 		b.setTime("22:50");
 		d.setDateTime(b);
-		System.out.println("--------------------------");
 		System.out.println(d.getDateTime());
 		   
+		//Appointment test ended here.
+		
+		
+		
+
+		
 		//regex test
 		/*Scanner sc= new Scanner(System.in);
 		System.out.println("isim Gir");
@@ -69,8 +77,6 @@ public class Test{
 		else
 			System.out.println("problem yok");
 		*/	
-
-
 		
 // Appointment için sorgular oluşturulacak . Kontrol yapısı / Yeni tarih
 
