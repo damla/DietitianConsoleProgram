@@ -5,7 +5,137 @@ public class Test{
 //son id numarasini kayit ettirerek ordan eklemeye devam etmesini saglayabiliriz.
 	
 	public static void main(String[]args) {
+		Scanner scan = new Scanner(System.in);
+	    /* Creating object of linkedList */
+	    DoublyLinkedList list = new DoublyLinkedList();    
+	    System.out.println("Doubly Linked List Test\n");          
+	    char ch;
+	    /*  Perform list operations  */
+	    do
+	    {
+	        System.out.println("\nDoubly Linked List Operations\n");
+	        System.out.println("1. insert at begining");
+	        System.out.println("2. insert at end");
+	        System.out.println("3. insert at position");
+	        System.out.println("4. delete at position");
+	        System.out.println("5. check empty");
+	        System.out.println("6. get size");
+
+	        int choice = scan.nextInt();            
+	        switch (choice)
+	        {
+	        case 1 : 
+	            System.out.println("Bilgileri gir.");
+	            String a="damla";
+	            String b="koksal";
+	            double weight=51;
+	            double height=1.61;
+	            String birthdate= "10/10/1996";
+	            String phoneNo="05348871814";
+	            String date="01/04/2018";
+	            String time="10:00";
+	            String dList="Mukemmel,gerek yok";
+	            list.insertAtStart(a,b,weight,height,birthdate,phoneNo,date,time,dList);                     
+	            break;                          
+	        case 2 : 
+	            System.out.println("Enter integer element to insert");
+	           // list.insertAtEnd(a,b,weight,height,birthdate,phoneNo,date,time,dList,null,null);                     
+	            break;                         
+	        case 3 : 
+	       /*     System.out.println("Enter integer element to insert");
+	            int num = scan.nextInt() ;
+	            System.out.println("Enter position");
+	            int pos = scan.nextInt() ;
+	            if (pos < 1 || pos > list.getSize() )
+	                System.out.println("Invalid position\n");
+	            else
+	                list.insertAtPos(num, pos);*/
+	            break;                                          
+	        case 4 : 
+	            System.out.println("Enter position");
+	            int p = scan.nextInt() ;
+	            if (p < 1 || p > list.getSize() )
+	                System.out.println("Invalid position\n");
+	            else
+	                list.deleteAtPos(p);
+	            break;     
+	        case 5 : 
+	            System.out.println("Empty status = "+ list.isEmpty());
+	            break;            
+	        case 6 : 
+	            System.out.println("Size = "+ list.getSize() +" \n");
+	            break;                         
+	        default : 
+	            System.out.println("Wrong Entry \n ");
+	            break;   
+	        }    
+	        /*  Display List  */ 
+	        list.display();
+	        System.out.println("\nDo you want to continue (Type y or n) \n");
+	        ch = scan.next().charAt(0);    
+
+	    } while (ch == 'Y'|| ch == 'y');   
+		
+
+		
+		
+		
+		
+		
+	}
+}
+		//once linked list
+		//sonra tree
+		//en son console seceneklerini yonlendirme
+		
+/*	System.out.println("Linked Listimiz:");
+			
+		
+		
+		
+		
+		char ch;
+		do
+		   {
+		System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
+						   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
+						   "\n *Select (1) to get patient's information."+
+						   "\n *Select (2) to see appoinments."+
+						   "\n *Select (3) to create new patient."+
+						   "\nYour selection: ");
+		
+		Scanner sc=new Scanner(System.in);
+		int choice = sc.nextInt();            
+        switch (choice)
+        {
+       
+        case 1 : 
+            System.out.println("1 i secti");
+            
+            break;
+        
+        case 2 : 
+            System.out.println("2 yi secti");
+            
+            break;                         
+        
+        case 3 : 
+            System.out.println("3 u secti");
+        
+            break;                                          
+        
+        default : 
+            System.out.println("Please select an option from the list belove. \n ");
+            System.out.println("\nDo you want to continue (Type y or n) \n");
+            break;
+        }    
+        ch = sc.next().charAt(0);
+    } while (ch == 'Y'|| ch == 'y');   
+	}
 	
+}
+		
+*/
 		
 		
 		
@@ -42,32 +172,17 @@ public class Test{
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
+	
 	//Test Starting here.	
 	//1st patient
 		
-	/*	Patient d=new Patient("damla","koksal",51,1.61);
+	/*burayi sil	Patient d=new Patient("damla","koksal",51,1.61);
 		
 		d.setBirthdate("10/10/1996"); 
 		d.setBmi();
 		d.setUsername();
 		d.setPhoneNo("0(212)222-2222");
-		System.out.println("Username: "+ d.getUsername() +
-						   "\nName: "+ d.getpName() +
-						   "\nSurname: "+ d.getpSurname() +
-						   "\nPhone No: "+ d.getPhoneNo() +
-						   "\nBirthdate: " + d.getBirthdate() +
-						   "\nAge: " + d.getAge() +
-						   "\nWeight: " + d.getWeight() +
-						   "\nHeight: " + d.getHeight() +
-						   "\nBmi: " + d.getBmi() +
-						   "\nId: " + d.getpId());
+		System.out.println(d.toString());
 		
 		System.out.println();
 		Patient o=new Patient("Yaprak", "Koksal", 54, 1.62);
@@ -108,7 +223,6 @@ public class Test{
 		System.out.println("------------------------- ");
 		DietList a=new DietList();
 		a.setdList("");
-		a.setBmi();
 		d.setDietList(a);
 		System.out.println(d.getDietList());
 		
@@ -116,7 +230,6 @@ public class Test{
 		System.out.println("------------------------- ");
 		DietList c = new DietList();
 		c.setdList("");
-		c.setBmi();
 		k.setDietList(c);
 		System.out.println(k.getDietList());
 
@@ -128,10 +241,10 @@ public class Test{
 		Appointment b=new Appointment();
 		b.setDate("30/04/2018");
 		b.setTime("22:50");
-		k.setDateTime(b);
-		System.out.println(k.getDateTime());
-		*/
-		   
+		k.setAppointment(b);
+		System.out.println(k.getAppointment());
+		
+	}}	   burayi sil*/
 		//Appointment test ended here.
 		
 		
@@ -146,6 +259,3 @@ public class Test{
 		else
 			System.out.println("problem yok");
 		*/	
-
-	}
-}

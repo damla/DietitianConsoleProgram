@@ -1,5 +1,5 @@
 
-public class DoublyLinkedList {
+public class DoublyLinkedList extends Patient {
 	//this code is taken from our teacher's codes to implement our project.
 	//We did not started to work on doubly linked list yet.
 	    protected Node start;
@@ -24,9 +24,9 @@ public class DoublyLinkedList {
 	        return size;
 	    }
 	    /* Function to insert element at begining */
-	    public void insertAtStart(int val)
+	    public void insertAtStart(String name,String surname, double weight,double height, String birthdate, String phoneNo, String date, String time, String dList, Node n, Node p)
 	    {
-	        Node nptr = new Node(val, null, null); //count val 
+	        Node nptr = new Node(name,surname,weight,height,birthdate,phoneNo,date,time,dList,null,null); 
 	        if(start == null) //liste bossa
 	        {
 	            start = nptr;
@@ -41,9 +41,9 @@ public class DoublyLinkedList {
 	        size++;
 	    }
 	    /* Function to insert element at end */
-	    public void insertAtEnd(int val)
+	    public void insertAtEnd(String name,String surname, double weight,double height, String birthdate, String phoneNo, String date, String time, String dList)
 	    {
-	        Node nptr = new Node(val, null, null);        
+	        Node nptr = new Node(name,surname,weight,height,birthdate,phoneNo,date,time,dList,null,null);        
 	        if(start == null)
 	        {
 	            start = nptr;
@@ -58,12 +58,12 @@ public class DoublyLinkedList {
 	        size++;
 	    }
 	    /* Function to insert element at position */
-	    public void insertAtPos(int val , int pos)
+	    public void insertAtPos(String name,String surname, double weight,double height, String birthdate, String phoneNo, String date, String time, String dList, Node n, Node p , int pos)
 	    {
-	        Node nptr = new Node(val, null, null);    
+	        Node nptr = new Node(name,surname,weight,height,birthdate,phoneNo,date,time,dList, null, null);    
 	        if (pos == 1)
 	        {
-	            insertAtStart(val);
+	            insertAtStart(name,surname,weight,height,birthdate,phoneNo,date,time,dList,null,null);
 	            return;
 	        }            
 	        Node ptr = start;
@@ -123,26 +123,26 @@ public class DoublyLinkedList {
 	    /* Function to display status of list */
 	    public void display()
 	    {
-	        System.out.print("\nDoubly Linked List = ");
+	        System.out.print("\nPatients = ");
 	        if (size == 0) 
 	        {
-	            System.out.print("empty\n");
+	            System.out.print("No patient found.\n");
 	            return;
 	        }
 	        
 	        if (start.getLinkNext() == null) 
 	        {
-	            System.out.println(start.getData() );
+	            System.out.println( );
 	            return;
 	        }
 	        Node ptr = start;
-	        System.out.print(start.getData()+ " <-> ");
+	        System.out.print(start.toString() + start.getDietList().toString() +start.getAppointment().toString() + " <-> ");
 	        ptr = start.getLinkNext();
 	        while (ptr.getLinkNext() != null)
 	        {
-	            System.out.print(ptr.getData()+ " <-> ");
+	            System.out.print(ptr.toString() + ptr.getDietList().toString() +ptr.getAppointment().toString() + " <-> ");
 	            ptr = ptr.getLinkNext();
 	        }
-	        System.out.print(ptr.getData()+ "\n");
+	        System.out.print(ptr.toString() + ptr.getDietList().toString() +ptr.getAppointment().toString()+ "\n");
 	    }
 }

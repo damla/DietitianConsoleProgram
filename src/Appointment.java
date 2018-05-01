@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 
 public class Appointment extends Patient
 {
-	//Date ve Time oluþturuldu.
+	//Date ve Time olusturuldu.
 	
 	private Date date =new Date(); 
 	private Date time=new Date(); 
@@ -20,7 +20,7 @@ public class Appointment extends Patient
 		try {
 			
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			this.date = sdf.parse(date); // date stringe çevirdik
+			this.date = sdf.parse(date); // date stringe ï¿½evirdik
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
