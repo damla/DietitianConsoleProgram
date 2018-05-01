@@ -41,7 +41,7 @@ public class Test{
 	            System.out.println("Enter integer element to insert");
 	           // list.insertAtEnd(a,b,weight,height,birthdate,phoneNo,date,time,dList,null,null);                     
 	            break;                         
-	        case 3 : 
+	        case 3 :  
 	       /*     System.out.println("Enter integer element to insert");
 	            int num = scan.nextInt() ;
 	            System.out.println("Enter position");
