@@ -156,27 +156,7 @@ public class Test{
 		
 		
 		
-		
-<<<<<<< HEAD
-=======
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
->>>>>>> branch 'master' of https://gitlab.com/DietationProject/Project1.git
+
 	//Test Starting here.	
 	//1st patient
 		
@@ -225,11 +205,11 @@ public class Test{
 	  public static void main(String[]args) {
 	 
 		
-<<<<<<< HEAD
+
 
 
 	} 
-=======
+
 		System.out.println("------------------------- ");
 		DietList a=new DietList();
 		a.setdList("");
@@ -242,9 +222,8 @@ public class Test{
 		c.setdList("");
 		k.setDietList(c);
 		System.out.println(k.getDietList());
->>>>>>> branch 'master' of https://gitlab.com/DietationProject/Project1.git
 
-		
+
 		//Diet object test ended here.
 
 		System.out.println("--------------------------");
