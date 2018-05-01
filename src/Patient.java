@@ -19,7 +19,7 @@ public class Patient{
 	private int age;
 	private String phoneNo;
 	private DietList list;
-	private Appointment dateTime;
+	private Appointment appointment;
 
 	
 	public String getpName() { //Name and surname must be set before username.
@@ -190,15 +190,15 @@ public class Patient{
 	}
 	
 	
-	public Appointment getDateTime() {
-		return dateTime;
+	public Appointment getAppointment() {
+		return appointment;
 	}
 	
-	public void setDateTime(Appointment dateTime) {
-		this.dateTime = dateTime;
-		dateTime.setpId(this.getpId());
-		dateTime.setpName(this.getpName());
-		dateTime.setpSurname(this.getpSurname());
+	public void setAppointment(Appointment appointment) {
+		this.appointment = appointment;
+		appointment.setpId(this.getpId());
+		appointment.setpName(this.getpName());
+		appointment.setpSurname(this.getpSurname());
 
 	}
 
@@ -215,4 +215,17 @@ public class Patient{
 		this.weight=weight;
 		this.height=height;
 	}	
+	
+	public String toString() {
+		return "Username: "+ this.username +
+				   "\nName: "+ this.pName +
+				   "\nSurname: "+ this.pSurname +
+				   "\nPhone No: "+ this.phoneNo +
+				   "\nBirthdate: " + this.getBirthdate() +
+				   "\nAge: " +this.age +
+				   "\nWeight: " + this.weight +
+				   "\nHeight: " + this.height +
+				   "\nBmi: " + this.bmi +
+				   "\nId: " + this.pId;
+	}
 }
