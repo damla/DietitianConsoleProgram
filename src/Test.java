@@ -5,9 +5,54 @@ public class Test{
 //son id numarasini kayit ettirerek ordan eklemeye devam etmesini saglayabiliriz.
 	
 	public static void main(String[]args) {
-		//1st patient
+	
 		
-		Patient d=new Patient("damla","koksal",51,1.61);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	//Test Starting here.	
+	//1st patient
+		
+	/*	Patient d=new Patient("damla","koksal",51,1.61);
 		
 		d.setBirthdate("10/10/1996"); 
 		d.setBmi();
@@ -85,7 +130,7 @@ public class Test{
 		b.setTime("22:50");
 		k.setDateTime(b);
 		System.out.println(k.getDateTime());
-		
+		*/
 		   
 		//Appointment test ended here.
 		
@@ -100,8 +145,6 @@ public class Test{
 		else
 			System.out.println("problem yok");
 		*/	
-		
-// Appointment için sorgular oluşturulacak . Kontrol yapısı / Yeni tarih
 
 	}
 }
