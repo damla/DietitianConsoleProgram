@@ -142,6 +142,7 @@ public class Test{
 		String pattern = "(?<=\\s|^)[a-zA-Z]*(?=[.,;:]?\\s|$)"; //Regex for phone numbers WITHOUT ZERO.
 		if(name=="" || name==" " || !name.matches(pattern))
 			System.out.println("problem var");
+			
 		else
 			System.out.println("problem yok");
 		*/	
