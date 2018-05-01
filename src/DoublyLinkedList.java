@@ -24,7 +24,7 @@ public class DoublyLinkedList extends Patient {
 	        return size;
 	    }
 	    /* Function to insert element at begining */
-	    public void insertAtStart(String name,String surname, double weight,double height, String birthdate, String phoneNo, String date, String time, String dList, Node n, Node p)
+	    public void insertAtStart(String name,String surname, double weight,double height, String birthdate, String phoneNo, String date, String time, String dList)
 	    {
 	        Node nptr = new Node(name,surname,weight,height,birthdate,phoneNo,date,time,dList,null,null); 
 	        if(start == null) //liste bossa
@@ -63,7 +63,7 @@ public class DoublyLinkedList extends Patient {
 	        Node nptr = new Node(name,surname,weight,height,birthdate,phoneNo,date,time,dList, null, null);    
 	        if (pos == 1)
 	        {
-	            insertAtStart(name,surname,weight,height,birthdate,phoneNo,date,time,dList,null,null);
+	            insertAtStart(name,surname,weight,height,birthdate,phoneNo,date,time,dList);
 	            return;
 	        }            
 	        Node ptr = start;
@@ -135,17 +135,17 @@ public class DoublyLinkedList extends Patient {
 	        
 	        if (start.getLinkNext() == null) 
 	        {
-	            System.out.println( );
+	            System.out.println(start.toString());
 	            return;
 	        }
 	        Node ptr = start;
-	        System.out.print(start.toString() + start.getDietList().toString() +start.getAppointment().toString() + " <-> ");
+	        System.out.print(start.toString() + " <-> ");
 	        ptr = start.getLinkNext();
 	        while (ptr.getLinkNext() != null)
 	        {
-	            System.out.print(ptr.toString() + ptr.getDietList().toString() +ptr.getAppointment().toString() + " <-> ");
+	            System.out.print(start.toString() + " <-> ");
 	            ptr = ptr.getLinkNext();
 	        }
-	        System.out.print(ptr.toString() + ptr.getDietList().toString() +ptr.getAppointment().toString()+ "\n");
+	        System.out.print(start.toString()+ "\n");
 	    }
 }

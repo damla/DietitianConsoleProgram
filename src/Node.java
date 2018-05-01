@@ -11,7 +11,7 @@ public class Node extends Patient{
 		/* Constructor */
 	    public Node() //yeni node eklersek null gelir, daha sonra setlenebilir
 	    {
-
+	  
 	        next = null;
 	        prev = null;
 	        
@@ -24,13 +24,7 @@ public class Node extends Patient{
 	    		//next ve previous nodelar aliniyor.
 	    	   	//id kisi yaratildiginda zaten atanmis oluyor.
 	    		
-	    		//appointment setleri
-	    	   	this.appointment.setDate(date);
-	    	   	this.appointment.setTime(time);
-	    	   	
-	    	   	//dietlist setleri
-	    	   	this.dietList.setdList(dList);
-
+	    		
 	    	   	//patient setleri
 	    		this.patient.setpName(name);
 	    		this.patient.setpSurname(surname);
@@ -40,8 +34,16 @@ public class Node extends Patient{
 	    		this.patient.setBmi();
 	    		this.patient.setUsername();
 	    		this.patient.setPhoneNo(phoneNo);
+	    		
+	    		//appointment setleri
+	    	   	this.appointment.setDate(date);
+	    	   	this.appointment.setTime(time);
+	    	   	
+	    	   	//dietlist setleri
+	    	   	this.dietList.setdList(dList);
+	    	   	
 	    		this.patient.setAppointment(this.appointment);
-	    		this.patient.setDietList(dietList);
+	    		this.patient.setDietList(this.dietList);
 	    		
 	        next = n;
 	        prev = p;
@@ -67,6 +69,13 @@ public class Node extends Patient{
 	    public Node getLinkPrev()
 	    {
 	        return prev;
+	    }
+	    
+	    public String toString() {
+	    	
+	    	return "patient:" + "/n"+ this.patient.toString()+ "DietList/n"
+	    			+ this.patient.getDietList().toString()
+	    			+ "Appointment/n"+ this.patient.getAppointment().toString();
 	    }
 	  
 }
