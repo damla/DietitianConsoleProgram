@@ -4,6 +4,7 @@ public class Test{
 // for dongusuyle giris yaptiririz. treeye eklemek icin id kullanacagimizi ele alirsak kullanicilara atanan en 
 //son id numarasini kayit ettirerek ordan eklemeye devam etmesini saglayabiliriz.
 	
+
 	public static void main(String[]args) {
 		Scanner scan = new Scanner(System.in);
 	    /* Creating object of linkedList */
@@ -156,6 +157,8 @@ public class Test{
 		
 		
 		
+<<<<<<< HEAD
+=======
 		
 		
 		
@@ -173,6 +176,7 @@ public class Test{
 		
 		
 	
+>>>>>>> branch 'master' of https://gitlab.com/DietationProject/Project1.git
 	//Test Starting here.	
 	//1st patient
 		
@@ -217,9 +221,15 @@ public class Test{
 				   "\nBmi: " + k.getBmi() +
 				   "\nId: " + k.getpId()); 
 		System.out.println();
-	
-		//patient object test ended here.
+
+	  public static void main(String[]args) {
+	 
 		
+<<<<<<< HEAD
+
+
+	} 
+=======
 		System.out.println("------------------------- ");
 		DietList a=new DietList();
 		a.setdList("");
@@ -232,6 +242,7 @@ public class Test{
 		c.setdList("");
 		k.setDietList(c);
 		System.out.println(k.getDietList());
+>>>>>>> branch 'master' of https://gitlab.com/DietationProject/Project1.git
 
 		
 		//Diet object test ended here.
