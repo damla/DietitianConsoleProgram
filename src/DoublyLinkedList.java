@@ -125,6 +125,7 @@ public class DoublyLinkedList extends Patient {
 	    public void display()
 	    {
 	        System.out.print("\nPatients = ");
+	        
 	        if (size == 0) 
 	        {
 	            System.out.print("No patient found.\n");
