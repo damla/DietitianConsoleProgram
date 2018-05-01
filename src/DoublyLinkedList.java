@@ -131,6 +131,7 @@ public class DoublyLinkedList extends Patient {
 	            return;
 	        }
 	        
+	        
 	        if (start.getLinkNext() == null) 
 	        {
 	            System.out.println( );
