@@ -119,7 +119,8 @@ public class DoublyLinkedList extends Patient {
 	            }
 	            ptr = ptr.getLinkNext();
 	        }        
-	    }    
+	    }   
+	    
 	    /* Function to display status of list */
 	    public void display()
 	    {
