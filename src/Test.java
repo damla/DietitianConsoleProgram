@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Test{
@@ -5,91 +6,77 @@ public class Test{
 //son id numarasini kayit ettirerek ordan eklemeye devam etmesini saglayabiliriz.
 	
 
-	public static void main(String[]args) {
-		Scanner scan = new Scanner(System.in);
-	    /* Creating object of linkedList */
-	    DoublyLinkedList list = new DoublyLinkedList();    
-	    System.out.println("Doubly Linked List Test\n");          
-	    char ch;
-	    /*  Perform list operations  */
-	    do
-	    {
-	        System.out.println("\nDoubly Linked List Operations\n");
-	        System.out.println("1. insert at begining");
-	        System.out.println("2. insert at end");
-	        System.out.println("3. insert at position");
-	        System.out.println("4. delete at position");
-	        System.out.println("5. check empty");
-	        System.out.println("6. get size");
+		  public static void main(String[] args) {
+			
+			  Patient d=new Patient("Damla", "Koksal",51, 1.61);
+			  d.setBirthday("10/10/1996");
+			  d.setBmi();
+			  d.setUsername();
+			  d.setPhoneNo("0(212)222-2222");
+			  d.setDateAppointment("10/04/2018");
+			  d.setTimeAppointment("10:30");
+			  d.setdList("Mukemmel,gerek yok.");
+			  d.setBmi(); //!! dikkat height weight set edildikten sonra yap
+			  
+			  System.out.println(d.toString());
+			  System.out.println(); 
+			  
+			  Scanner s = new Scanner(System.in);
+			  int x;
+			  BinarySearchTree b = new BinarySearchTree();
+			  b.insert(d.getpId());
+			  b.insert(2);
+			  b.insert(3);
+			  System.out.println("inorder traversal:");
+			  b.inorder(b.getRoot());
+			  System.out.println();
+			  
+			  System.out.println("number of nodes in the tree: " + b.getSize());
+			  System.out.println("Enter a number to delete from the tree: ");
+			  x = d.getpId();
+			  if(b.delete(x)) //true gelirse
+			  System.out.println(x + " is deleted from the tree.");
+			  else
+			  System.out.println(x + " is not in the tree");
+			  b.inorder(b.getRoot());
+			  
+			  System.out.println();
+			  LinkedList<Patient> ml = new LinkedList<Patient>();
 
-	        int choice = scan.nextInt();            
-	        switch (choice)
-	        {
-	        case 1 : 
-	            System.out.println("Bilgileri gir.");
-	            String a="damla";
-	            String b="koksal";
-	            double weight=51;
-	            double height=1.61;
-	            String birthdate= "10/10/1996";
-	            String phoneNo="05348871814";
-	            String date="01/04/2018";
-	            String time="10:00";
-	            String dList="Mukemmel,gerek yok";
-	            list.insertAtStart(a,b,weight,height,birthdate,phoneNo,date,time,dList);                     
-	            break;                          
-	        case 2 : 
-	            System.out.println("Enter integer element to insert");
-	           // list.insertAtEnd(a,b,weight,height,birthdate,phoneNo,date,time,dList,null,null);                     
-	            break;                         
-	        case 3 :  
-	       /*     System.out.println("Enter integer element to insert");
-	            int num = scan.nextInt() ;
-	            System.out.println("Enter position");
-	            int pos = scan.nextInt() ;
-	            if (pos < 1 || pos > list.getSize() )
-	                System.out.println("Invalid position\n");
-	            else
-	                list.insertAtPos(num, pos);*/
-	            break;                                          
-	        case 4 : 
-	            System.out.println("Enter position");
-	            int p = scan.nextInt() ;
-	            if (p < 1 || p > list.getSize() )
-	                System.out.println("Invalid position\n");
-	            else
-	                list.deleteAtPos(p);
-	            break;     
-	        case 5 : 
-	            System.out.println("Empty status = "+ list.isEmpty());
-	            break;            
-	        case 6 : 
-	            System.out.println("Size = "+ list.getSize() +" \n");
-	            break;                         
-	        default : 
-	            System.out.println("Wrong Entry \n ");
-	            break;   
-	        }    
-	        /*  Display List  */ 
-	        list.display();
-	        System.out.println("\nDo you want to continue (Type y or n) \n");
-	        ch = scan.next().charAt(0);    
-
-	    } while (ch == 'Y'|| ch == 'y');   
-		
-
-		
-		
-		
-		
-		
+			   ml.add(d);
+			   ml.add(1, new Patient("Demet","Ozbay",45,1.55));
+			   if(!b.search(d.getpId()))
+				  ml.remove(d.getpId()-1);
+			    for (Patient element : ml)
+			      System.out.println(element + "\n");
+			/*  System.out.println("Enter a number to delete from the tree: ");
+			  x = s.nextInt();
+			  if(b.delete(x))
+			  System.out.println(x + " is deleted from the tree.");
+			  else
+			  System.out.println(x + " is not in the tree");
+			  System.out.println("inorder traversal after delete:");
+			  b.inorder(b.getRoot());
+			  System.out.println("\nEnter a number to search in the tree: ");
+			  x = s.nextInt();
+			  if(b.search(x))
+			  System.out.println(x + " is in the tree.");
+			  else
+			  System.out.println(x + " is not in the tree");
+			*/  
+			  
 	}
 }
+	
+	//id =index+1
+	//index=id-1
+	
+	
 		//once linked list
 		//sonra tree
 		//en son console seceneklerini yonlendirme
 		
-/*	System.out.println("Linked Listimiz:");
+	/* 3.TEST System.out.println("Linked Listimiz:");
 			
 		
 		
@@ -134,118 +121,56 @@ public class Test{
     } while (ch == 'Y'|| ch == 'y');   
 	}
 	
-}
+} 3.TEST SONU*/
 		
-*/
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+ 	
 
-	//Test Starting here.	
-	//1st patient
-		
-	/*burayi sil	Patient d=new Patient("damla","koksal",51,1.61);
-		
-		d.setBirthdate("10/10/1996"); 
-		d.setBmi();
-		d.setUsername();
-		d.setPhoneNo("0(212)222-2222");
-		System.out.println(d.toString());
-		
-		System.out.println();
-		Patient o=new Patient("Yaprak", "Koksal", 54, 1.62);
-		//2nd patient
-		
-		o.setBirthdate("10/10/2001");
-		o.setBmi();
-		o.setUsername();
-		System.out.println("Username: "+ o.getUsername() +
-				   "\nName: "+ o.getpName() +
-				   "\nSurname: "+ o.getpSurname() +
-				   "\nBirthdate: " + o.getBirthdate() +
-				   "\nAge: " + o.getAge() +
-				   "\nWeight: " + o.getWeight() +
-				   "\nHeight: " + o.getHeight() +
-				   "\nBmi: " + o.getBmi() +
-				   "\nId: " + o.getpId()); 
-		
-		System.out.println();
-		
-		//3nd patient
-		Patient k = new Patient("Demet","Ozbay",45,1.55);
-		k.setBirthdate("25/03/1992");
-		k.setBmi();
-		k.setUsername();
-		System.out.println("Username: "+ k.getUsername()+ "\nName: "+ k.getpName() +
-				   "\nSurname: "+ k.getpSurname() +
-				   "\nBirthdate: " + k.getBirthdate() +
-				   "\nAge: " + k.getAge() +
-				   "\nWeight: " + k.getWeight() +
-				   "\nHeight: " + k.getHeight() +
-				   "\nBmi: " + k.getBmi() +
-				   "\nId: " + k.getpId()); 
-		System.out.println();
+	
 
+	/* ILK TEST  
 	  public static void main(String[]args) {
 	 
-		
+		//Test Starting here.	
+			//1st patient
 
+				Patient d=new Patient();
+				
+				d.setBirthday("10/10/1990");
+				d.setBmi();
+				d.setUsername();
+				d.setPhoneNo("0(212)222-2222");
+				d.setDateAppointment("");
+				d.setTimeAppointment("");
+				d.setdList("");
+				d.setWeight(50);
+				d.setHeight(1.61);
+				d.setBmi(); //!! dikkat height weight set edildikten sonra yap
+				System.out.println(d.toString());
 
+			System.out.println();
 
-	} 
-
-		System.out.println("------------------------- ");
-		DietList a=new DietList();
-		a.setdList("");
-		d.setDietList(a);
-		System.out.println(d.getDietList());
-		
-		
-		System.out.println("------------------------- ");
-		DietList c = new DietList();
-		c.setdList("");
-		k.setDietList(c);
-		System.out.println(k.getDietList());
-
-
-		//Diet object test ended here.
-
-		System.out.println("--------------------------");
-
-		Appointment b=new Appointment();
-		b.setDate("30/04/2018");
-		b.setTime("22:50");
-		k.setAppointment(b);
-		System.out.println(k.getAppointment());
-		
-	}}	   burayi sil*/
+				Patient o=new Patient("Yaprak", "Koksal", 54, 1.62);
+				//2nd patient
+				
+				o.setBirthday("10/10/2001");
+				o.setBmi();
+				o.setUsername();
+				System.out.println(o.toString()); 
+				System.out.println();
+	
+	}
+	  }ILK TEST SONU	*/
 		//Appointment test ended here.
 		
 		
 		//regex test
-		/*Scanner sc= new Scanner(System.in);
-		System.out.println("isim Gir");
-		String name=sc.nextLine();
-		String pattern = "(?<=\\s|^)[a-zA-Z]*(?=[.,;:]?\\s|$)"; //Regex for phone numbers WITHOUT ZERO.
-		if(name=="" || name==" " || !name.matches(pattern))
-			System.out.println("problem var");
+		//Scanner sc= new Scanner(System.in);
+		//System.out.println("isim Gir");
+		//String name=sc.nextLine();
+		//String pattern = "(?<=\\s|^)[a-zA-Z]*(?=[.,;:]?\\s|$)"; //Regex for phone numbers WITHOUT ZERO.
+		//if(name=="" || name==" " || !name.matches(pattern))
+		//	System.out.println("problem var");
 			
-		else
-			System.out.println("problem yok");
-		*/	
+		//else
+		//	System.out.println("problem yok");
+	
