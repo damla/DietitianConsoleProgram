@@ -1,10 +1,8 @@
 import java.util.LinkedList;
 import java.util.Scanner;
-
+//id =index+1
+//index=id-1
 public class Test{
-// for dongusuyle giris yaptiririz. treeye eklemek icin id kullanacagimizi ele alirsak kullanicilara atanan en 
-//son id numarasini kayit ettirerek ordan eklemeye devam etmesini saglayabiliriz.
-	
 
 		  public static void main(String[] args) {
 			
@@ -67,9 +65,7 @@ public class Test{
 			  
 	}
 }
-	
-	//id =index+1
-	//index=id-1
+
 	
 	
 		//once linked list
@@ -160,17 +156,4 @@ public class Test{
 	
 	}
 	  }ILK TEST SONU	*/
-		//Appointment test ended here.
-		
-		
-		//regex test
-		//Scanner sc= new Scanner(System.in);
-		//System.out.println("isim Gir");
-		//String name=sc.nextLine();
-		//String pattern = "(?<=\\s|^)[a-zA-Z]*(?=[.,;:]?\\s|$)"; //Regex for phone numbers WITHOUT ZERO.
-		//if(name=="" || name==" " || !name.matches(pattern))
-		//	System.out.println("problem var");
-			
-		//else
-		//	System.out.println("problem yok");
-	
+

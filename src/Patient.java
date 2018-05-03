@@ -312,4 +312,3 @@ public class Patient{
 	}
 	
 }
-//Yapilacaklar: name surname kontrollerini ayarla(temelde olan butun ozellikleri scannerla aldirtmaya calis)
