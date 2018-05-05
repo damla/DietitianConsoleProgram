@@ -51,7 +51,7 @@ public class Test{
 			  int choice=0;
 			  String username="";
 			  int flag=0;
-			  String backup="";
+			  int backupID=0;
 			  char ch='a';
 			  do {
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
@@ -67,7 +67,7 @@ public class Test{
 			  }
 			  //First choice: Patient's information.
 			  if(choice==1) {
-				 
+					System.out.println("-----------------------------------------------");
 				  System.out.println("Please enter the username of patient: ");   
 				  try {  
 				  username=sc.next();
@@ -77,20 +77,27 @@ public class Test{
 		          for(int i=0; i<bst.findMax(bst.getRoot()); i++) { //root en buyuk idli olan yani son eklenen eleman oluyor. Eleman silerken id yerini
 		            													//doldurmamiz gerekiyor. 
 		        	  	if(ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
+		        	  		backupID=ml.get(i).getpId();
 		        	  		flag++;
 		        	  		}  		
 		          }
 		          if(flag==1) {
-		        	  	backup=username;
+		        		//after valid username
+		        	  	System.out.println("-----------------------------------------------");
 		            	System.out.println("username: " + username);
-		            	//after valid username
-		            	if(username.equals(backup)) {
-				        	  System.out.println("test");
-				          } 
+		            	System.out.println("-----------------------------------------------");
+		            	System.out.print("Please select which information you want to see:" +
+		 					   "\n *Select (1) to get personel information of "+ml.get(backupID-1).getpName()+" "+ml.get(backupID-1).getpSurname()+
+		 					   "\n *Select (2) to see appoinments." +
+		 					   "\n *Select (3) to create new patient or delete."+
+		 					   "\nYour selection: ");
+		            	
+		            	
 		          }
 		          else { //after non valid username.
 		        	  	username = "Username is not valid.";
-					System.out.println("username: " + username + "Do you want to continue? ");
+		        		System.out.println("-----------------------------------------------");
+		        	  	System.out.println("username: " + username + "Do you want to continue? ");
 					ch = sc.next().charAt(0);
 		          }
 		          //username check done.
