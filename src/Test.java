@@ -47,7 +47,7 @@ public class Test{
 			  Scanner sc=new Scanner(System.in);
 			  int choice=0;
 			  String username="";
-			  
+
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
 					   "\n *Select (1) to get patient's information."+
@@ -59,7 +59,7 @@ public class Test{
 			  } catch(Exception e){
 				  System.out.println("Your selection is not valid.");
 			  }
-			  
+			  //First choice: Patient's information.
 			  if(choice==1) {
 				  System.out.println("Please enter the username of patient: ");
 		          
@@ -68,17 +68,27 @@ public class Test{
 		          }catch(Exception e) {
 		        	  System.out.println("Please enter a valid username.");
 		          }
-		            for(int i=0; i<bst.getRoot().getElement()-1; i++) { //root ve id iliskisini coz.
+		            for(int i=0; i<bst.getRoot().getElement(); i++) { //root en buyuk idli olan yani son eklenen eleman oluyor. Eleman silerken id yerini
+		            													//doldurmamiz gerekiyor. 
 		            		if(!ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
 		            			username="Not valid.";
 		            		}
 		            	}
-		            System.out.println("Username: " + username);
-			  }
+		          System.out.println("username: " +username);
+			   }
+			  
+			  
+			  //linked list 0 1 2 3 4 5
+			  //binary tree 1 2 3 4 5 6 idler
+			  //roota(en buyuk id) kadar kontrol et bosluk varsa doldur yoksa sona ekle! Ona gore linkede ekle
+			  
+			  //Second choice: See appointments
 			  else if(choice==2) {
 				  System.out.println("Selected 2");	  
 			  }
+			  //Third choice: Create new patient
 			  else if(choice==3) {
+				  //ml.add(1, new Patient("Demet","Ozbay",45,1.55)); bu sekilde eklersek patient ismi sorunu kalmaz
 				  System.out.println("Selected 3");	  
 			  }
 			  
