@@ -49,6 +49,7 @@ public class Test{
 			  Scanner sc=new Scanner(System.in);
 			  int choice=0;
 			  String username="";
+			  int flag=0;
 
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
@@ -63,8 +64,7 @@ public class Test{
 			  }
 			  //First choice: Patient's information.
 			  if(choice==1) {
-				  
-				  
+				 
 				  System.out.println("Please enter the username of patient: ");   
 				  try {  
 				  username=sc.next();
@@ -73,13 +73,17 @@ public class Test{
 		          }
 		            for(int i=0; i<bst.getRoot().getElement(); i++) { //root en buyuk idli olan yani son eklenen eleman oluyor. Eleman silerken id yerini
 		            													//doldurmamiz gerekiyor. 
-		            		if(!ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
-		            			username="Not valid.";
+		            		if(ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
+		            			flag++;
+								continue;
 		            		}
 		            	}
+		            if(flag==1)
 		          System.out.println("username: " + username);
-		          
-		          
+		            else {
+						username = "Username is not valid.";
+						System.out.println("username: " + username + "flag " +flag);
+					}
 			   }
 			  
 			  
