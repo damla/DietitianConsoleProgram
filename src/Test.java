@@ -37,12 +37,14 @@ public class Test{
 			  ml.add(d.getpId()-1,d);
 			  bst.insert(d.getpId());
 			  
-			 for (Patient element : ml)
+			 /*for (Patient element : ml)
 			      System.out.println(element + "\n");
 			  
 			  System.out.println("inorder print binary:");
 			  bst.inorder(bst.getRoot());
-		
+			  Bulunan hastalari ve treeyi dokmek icin
+			 */
+			  
 			  //console app starts here.
 			  Scanner sc=new Scanner(System.in);
 			  int choice=0;
@@ -52,7 +54,7 @@ public class Test{
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
 					   "\n *Select (1) to get patient's information."+
 					   "\n *Select (2) to see appoinments."+
-					   "\n *Select (3) to create new patient."+
+					   "\n *Select (3) to create new patient or delete."+
 					   "\nYour selection: ");
 			  try {
 			  choice=sc.nextInt();
@@ -61,8 +63,9 @@ public class Test{
 			  }
 			  //First choice: Patient's information.
 			  if(choice==1) {
-				  System.out.println("Please enter the username of patient: ");
-		          
+				  
+				  
+				  System.out.println("Please enter the username of patient: ");   
 				  try {  
 				  username=sc.next();
 		          }catch(Exception e) {
@@ -74,7 +77,9 @@ public class Test{
 		            			username="Not valid.";
 		            		}
 		            	}
-		          System.out.println("username: " +username);
+		          System.out.println("username: " + username);
+		          
+		          
 			   }
 			  
 			  
