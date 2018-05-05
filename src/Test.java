@@ -28,13 +28,51 @@ public class Test{
 			  ml.add(c.getpId()-1,c);
 			  bst.insert(c.getpId());
 			  
-			/*  for (Patient element : ml)
+			  Patient d=new Patient("Yagmur", "Koksal", 55, 1.65);
+			  a.setBirthday("08/09/1992");
+			  a.setPhoneNo("0(212)211-1111");
+			  a.setDateAppointment("15/04/2018");
+			  a.setTimeAppointment("11:30");
+			  a.setdList("sabah---ogle---aksam");
+			  ml.add(d.getpId()-1,d);
+			  bst.insert(c.getpId());
+			  
+			 for (Patient element : ml)
 			      System.out.println(element + "\n");
 			  
 			  System.out.println("inorder print binary:");
 			  bst.inorder(bst.getRoot());
-			  */
-			  char ch;
+		
+			  //console app starts here.
+			  Scanner sc=new Scanner(System.in);
+			  int choice=0;
+			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
+					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
+					   "\n *Select (1) to get patient's information."+
+					   "\n *Select (2) to see appoinments."+
+					   "\n *Select (3) to create new patient."+
+					   "\nYour selection: ");
+			  try {
+			  choice=sc.nextInt();
+			  } catch(Exception e){
+				  System.out.println("Your selection is not valid.");
+			  }
+			  
+			  if(choice==1) {
+				  System.out.println("Selected 1");	  
+			  }
+			  else if(choice==2) {
+				  System.out.println("Selected 2");	  
+			  }
+			  else if(choice==3) {
+				  System.out.println("Selected 3");	  
+			  }
+			  
+			  
+			  
+			  
+			  
+			/*  char ch;
 				do
 				   {
 				System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
@@ -52,13 +90,14 @@ public class Test{
 		        case 1 : 
 		            System.out.println("Please enter the username of patient: ");
 		            username=sc.nextLine();
-		       
-		            	for(int i=0;i<bst.getRoot().getElement()-1; i++) { //root ve id iliskisini coz.
+		            
+		            for(int i=0; i<bst.getRoot().getElement(); i++) { //root ve id iliskisini coz.
 		            		if(!ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
 		            			username="Not valid.";
 		            		}
-		            	}
-		       System.out.println(username);
+		            		}
+		            
+		   
 		            break;
 		        
 		        case 2 : 
@@ -79,7 +118,7 @@ public class Test{
 		        ch = sc.next().charAt(0);
 		    } while (ch == 'Y'|| ch == 'y');   
 			
-		
+		*/
 			  
 			  
 			  
@@ -216,6 +255,7 @@ public class Test{
 				System.out.println(o.toString()); 
 				System.out.println();
 	
+
 	}
 	  }ILK TEST SONU	*/
 
