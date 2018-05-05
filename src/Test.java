@@ -94,14 +94,12 @@ public class Test{
 			  //Second choice: See appointments
 			  else if(choice==2) {
 				  
-				  try {  
-				 
-		          }catch(Exception e) {
-		        	  System.out.println("---------------");
-		          }
-		            for(
-		            		
-					}
+				  
+	              while (ml != null) {
+
+	                     System.out.print(ml.element() + "  ");
+	                    
+	              }
 			  }
 			  //Third choice: Create new patient
 			  else if(choice==3) {
