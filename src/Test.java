@@ -37,6 +37,7 @@ public class Test{
 			  ml.add(d.getpId()-1,d);
 			  bst.insert(d.getpId());
 			  
+			  
 			 /*for (Patient element : ml)
 			      System.out.println(element + "\n");
 			  
