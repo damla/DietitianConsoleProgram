@@ -55,7 +55,8 @@ public class Test{
 			  int backupID=0;
 			  char ch='a';
 			  String exc="";
-			  do {
+			  
+			  while(ch=='y'||ch=='Y'){
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
 					   "\n *Select (1) to get patient's information."+
@@ -66,13 +67,12 @@ public class Test{
 			  choice=sc.nextInt();
 			  } catch(Exception e){
 				  System.out.println("-----------------------------------------------");
-				  System.out.println("Your selection is not valid.Do you want to continue?");
-				  exc=e.getMessage();
+				  System.out.println("Your selection is not valid.");
 			  }
-			  
+			
 			  //First choice: Patient's information.
 			  if(choice==1) {
-					System.out.println("-----------------------------------------------");
+				  System.out.println("-----------------------------------------------");
 				  System.out.println("Please enter the username of patient: ");   
 				  try {  
 				  username=sc.next();
@@ -97,7 +97,6 @@ public class Test{
 		 					   "\n *Select (3) to create new patient or delete."+
 		 					   "\nYour selection: ");
 		            	
-		            	
 		          }
 		          else { //after non valid username.
 		        	  	username = "Username is not valid.";
@@ -114,23 +113,26 @@ public class Test{
 			  
 			  //Second choice: See appointments
 			  else if(choice==2) {
-				  
-				  try {  
-				 
-		          }catch(Exception e) {
-		        	  System.out.println("---------------");
-		          }
-
-				//  for(	
-				//		}
+				  for (int i = 0; i < ml.size(); i++) 
+				  {
+					  	if (ml!=null) 
+						System.out.println(ml.get(i).getpName() + "  "+  ml.get(i).getpSurname() + " -----> "
+	                    											  + ml.get(i).getDateAppointment()
+	                    											  + "  " 
+	                    											  + ml.get(i).getTimeAppointment()+"");
+	                    				
+					  	else 
+						 System.out.println("There are no patients with appointments."); 
+					}
 			  }
 			  //Third choice: Create new patient
 			  else if(choice==3) {
 				  //ml.add(1, new Patient("Demet","Ozbay",45,1.55)); bu sekilde eklersek patient ismi sorunu kalmaz
 				  System.out.println("Selected 3");	  
 			  }
-
-			  }while(ch=='y'||ch=='Y');
+			  else
+				  break;
+			  }
 			  
 			  //deneme
 
