@@ -47,7 +47,7 @@ public class Test{
 			 */
 			  
 			  //console app starts here.
-			  Scanner sc=new Scanner(System.in);
+			  Scanner sc = new Scanner(System.in);
 			  int choice=0;
 			  String username="";
 			  int flag=0;
@@ -86,23 +86,29 @@ public class Test{
 						System.out.println("username: " + username);
 					}
 			   }
-			  
-			  
+
 			  //linked list 0 1 2 3 4 5
 			  //binary tree 1 2 3 4 5 6 idler
 			  //roota(en buyuk id) kadar kontrol et bosluk varsa doldur yoksa sona ekle! Ona gore linkede ekle
 			  
 			  //Second choice: See appointments
 			  else if(choice==2) {
-				  System.out.println("Selected 2");	  
+				  
+				  try {  
+				 
+		          }catch(Exception e) {
+		        	  System.out.println("---------------");
+		          }
+		            for(
+		            		
+					}
 			  }
 			  //Third choice: Create new patient
 			  else if(choice==3) {
 				  //ml.add(1, new Patient("Demet","Ozbay",45,1.55)); bu sekilde eklersek patient ismi sorunu kalmaz
 				  System.out.println("Selected 3");	  
 			  }
-			  
-			  
+
 			  //deneme
 			  
 			  
