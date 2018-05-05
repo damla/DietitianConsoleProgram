@@ -71,18 +71,18 @@ public class Test{
 		          }catch(Exception e) {
 		        	  System.out.println("Please enter a valid username.");
 		          }
-		            for(int i=0; i<bst.getRoot().getElement(); i++) { //root en buyuk idli olan yani son eklenen eleman oluyor. Eleman silerken id yerini
+		            for(int i=0; i<bst.findMax(bst.getRoot()); i++) { //root en buyuk idli olan yani son eklenen eleman oluyor. Eleman silerken id yerini
 		            													//doldurmamiz gerekiyor. 
 		            		if(ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
 		            			flag++;
-								continue;
 		            		}
+		            		
 		            	}
 		            if(flag==1)
 		          System.out.println("username: " + username);
 		            else {
 						username = "Username is not valid.";
-						System.out.println("username: " + username + "flag " +flag);
+						System.out.println("username: " + username);
 					}
 			   }
 			  

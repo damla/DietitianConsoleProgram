@@ -133,6 +133,21 @@ public class BinarySearchTree {
 			}
 			return false;
 		}	
+		  public int findMax(TreeNode root)
+		    {
+		        if (root == null)
+		            return Integer.MIN_VALUE;
+		 
+		        int res = root.getElement();
+		        int lres = findMax(root.getLeft());
+		        int rres = findMax(root.getRight());
+		 
+		        if (lres > res)
+		            res = lres;
+		        if (rres > res)
+		            res = rres;
+		        return res;
+		    }
 }
 /*--Methods--
  * getSize
