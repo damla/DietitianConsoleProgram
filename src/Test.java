@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Test{
 
 		  public static void main(String[] args) {
+			  
 			  //Example patients
 			  LinkedList<Patient> ml = new LinkedList<Patient>();
 			  BinarySearchTree bst = new BinarySearchTree();
@@ -53,6 +54,7 @@ public class Test{
 			  int flag=0;
 			  int backupID=0;
 			  char ch='a';
+			  String exc="";
 			  do {
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
@@ -63,8 +65,11 @@ public class Test{
 			  try {
 			  choice=sc.nextInt();
 			  } catch(Exception e){
-				  System.out.println("Your selection is not valid.");
+				  System.out.println("-----------------------------------------------");
+				  System.out.println("Your selection is not valid.Do you want to continue?");
+				  exc=e.getMessage();
 			  }
+			  
 			  //First choice: Patient's information.
 			  if(choice==1) {
 					System.out.println("-----------------------------------------------");
@@ -116,8 +121,8 @@ public class Test{
 		        	  System.out.println("---------------");
 		          }
 
-				  for(	
-						}
+				//  for(	
+				//		}
 			  }
 			  //Third choice: Create new patient
 			  else if(choice==3) {
@@ -126,7 +131,7 @@ public class Test{
 			  }
 
 			  }while(ch=='y'||ch=='Y');
-		  
+			  
 			  //deneme
 
 			  
@@ -226,6 +231,7 @@ public class Test{
 			*/  
 			  
 	}
+
 }
 
 	
