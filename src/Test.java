@@ -176,6 +176,7 @@ public class Test{
 			  
 			  System.out.println();
 			 
+			 
 
 			   ml.add(d);
 			   ml.add(1, new Patient("Demet","Ozbay",45,1.55));
