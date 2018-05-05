@@ -51,7 +51,9 @@ public class Test{
 			  int choice=0;
 			  String username="";
 			  int flag=0;
-
+			  String backup="";
+			  char ch='a';
+			  do {
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
 					   "\n *Select (1) to get patient's information."+
@@ -72,19 +74,26 @@ public class Test{
 		          }catch(Exception e) {
 		        	  System.out.println("Please enter a valid username.");
 		          }
-		            for(int i=0; i<bst.findMax(bst.getRoot()); i++) { //root en buyuk idli olan yani son eklenen eleman oluyor. Eleman silerken id yerini
+		          for(int i=0; i<bst.findMax(bst.getRoot()); i++) { //root en buyuk idli olan yani son eklenen eleman oluyor. Eleman silerken id yerini
 		            													//doldurmamiz gerekiyor. 
-		            		if(ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
-		            			flag++;
-		            		}
-		            		
-		            	}
-		            if(flag==1)
-		          System.out.println("username: " + username);
-		            else {
-						username = "Username is not valid.";
-						System.out.println("username: " + username);
-					}
+		        	  	if(ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
+		        	  		flag++;
+		        	  		}  		
+		          }
+		          if(flag==1) {
+		        	  	backup=username;
+		            	System.out.println("username: " + username);
+		            	//after valid username
+		            	if(username.equals(backup)) {
+				        	  System.out.println("test");
+				          } 
+		          }
+		          else { //after non valid username.
+		        	  	username = "Username is not valid.";
+					System.out.println("username: " + username + "Do you want to continue? ");
+					ch = sc.next().charAt(0);
+		          }
+		          //username check done.
 			   }
 			  
 			  
@@ -102,8 +111,9 @@ public class Test{
 				  System.out.println("Selected 3");	  
 			  }
 			  
-			  
-			  //deneme
+			  }while(ch=='y'||ch=='Y');
+		  
+			
 			  
 			  
 			/*  char ch;
