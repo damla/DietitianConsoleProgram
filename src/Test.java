@@ -29,13 +29,13 @@ public class Test{
 			  bst.insert(c.getpId());
 			  
 			  Patient d=new Patient("Yagmur", "Koksal", 55, 1.65);
-			  a.setBirthday("08/09/1992");
-			  a.setPhoneNo("0(212)211-1111");
-			  a.setDateAppointment("15/04/2018");
-			  a.setTimeAppointment("11:30");
-			  a.setdList("sabah---ogle---aksam");
+			  d.setBirthday("08/09/1992");
+			  d.setPhoneNo("0(212)211-1111");
+			  d.setDateAppointment("15/04/2018");
+			  d.setTimeAppointment("11:30");
+			  d.setdList("sabah---ogle---aksam");
 			  ml.add(d.getpId()-1,d);
-			  bst.insert(c.getpId());
+			  bst.insert(d.getpId());
 			  
 			 for (Patient element : ml)
 			      System.out.println(element + "\n");
@@ -46,6 +46,8 @@ public class Test{
 			  //console app starts here.
 			  Scanner sc=new Scanner(System.in);
 			  int choice=0;
+			  String username="";
+			  
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
 					   "\n *Select (1) to get patient's information."+
@@ -59,7 +61,19 @@ public class Test{
 			  }
 			  
 			  if(choice==1) {
-				  System.out.println("Selected 1");	  
+				  System.out.println("Please enter the username of patient: ");
+		          
+				  try {  
+				  username=sc.next();
+		          }catch(Exception e) {
+		        	  System.out.println("Please enter a valid username.");
+		          }
+		            for(int i=0; i<bst.getRoot().getElement()-1; i++) { //root ve id iliskisini coz.
+		            		if(!ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
+		            			username="Not valid.";
+		            		}
+		            	}
+		            System.out.println("Username: " + username);
 			  }
 			  else if(choice==2) {
 				  System.out.println("Selected 2");	  
