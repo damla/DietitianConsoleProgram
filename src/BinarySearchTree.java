@@ -156,4 +156,5 @@ public class BinarySearchTree {
  * inorder
  * delete
  * search
+ * FindMax
  */
