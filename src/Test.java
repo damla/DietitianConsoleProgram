@@ -131,14 +131,11 @@ public class Test{
 				  System.out.println("Selected 3");	  
 			  }
 			  else
-				  break;
-			  ch = sc.next().charAt(0);
+				  System.out.println("Your selection is not valid. Do you want to restart?");
+			  
+			  ch = sc.next().charAt(0); //En son y secilmesi icin
 			  }while(ch=='y'||ch=='Y');
-			  
-			  //deneme
-
-			  
-			  
+			 			   
 			/*  char ch;
 				do
 				   {
