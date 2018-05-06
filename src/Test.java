@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+
 import java.util.Scanner;
 //id =index+1
 //index=id-1
@@ -54,9 +55,8 @@ public class Test{
 			  int flag=0;
 			  int backupID=0;
 			  char ch='a';
-			  String exc="";
 			  
-			  while(ch=='y'||ch=='Y'){
+			  do{
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
 					   "\n *Select (1) to get patient's information."+
@@ -77,7 +77,7 @@ public class Test{
 				  try {  
 				  username=sc.next();
 		          }catch(Exception e) {
-		        	  System.out.println("Please enter a valid username.");
+		        	  System.out.println("Please enter a valid username. Do you want to continue?");
 		          }
 		          for(int i=0; i<bst.findMax(bst.getRoot()); i++) { //root en buyuk idli olan yani son eklenen eleman oluyor. Eleman silerken id yerini
 		            													//doldurmamiz gerekiyor. 
@@ -102,7 +102,7 @@ public class Test{
 		        	  	username = "Username is not valid.";
 		        		System.out.println("-----------------------------------------------");
 		        	  	System.out.println("username: " + username + "Do you want to continue? ");
-					ch = sc.next().charAt(0);
+					
 		          }
 		          //username check done.
 			   }
@@ -132,7 +132,8 @@ public class Test{
 			  }
 			  else
 				  break;
-			  }
+			  ch = sc.next().charAt(0);
+			  }while(ch=='y'||ch=='Y');
 			  
 			  //deneme
 

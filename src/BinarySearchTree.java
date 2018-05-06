@@ -2,8 +2,10 @@
 public class BinarySearchTree {
 
 	private TreeNode root;
-	private int size;
-	/** Create a default binary tree */
+	private int size;                                        
+	/** Create a default binary tree */                 
+														
+														 
 	
 	public BinarySearchTree()
 	{
