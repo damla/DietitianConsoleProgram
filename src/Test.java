@@ -337,11 +337,13 @@ public class Test{
 				  
 				  if(choice2 == 1) {
 					  //patient add
+					  //degiskenler yarat bilgileri tek tek yerlestir ama en basinda id yi kaydetki yerine birini yerlestirebil.
 					  System.out.println("Patient ekleme secildi");
 				  }
 				  
 				  else if(choice2 == 2) {
 					  //patient delete
+					  //sildigimiz konumu kaydedelim. bunu yapmak icin degiskeni dongu disinda tanimalayalim?
 					  System.out.println("Patient silme secildi");
 				  }
 				  
