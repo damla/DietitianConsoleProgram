@@ -84,9 +84,9 @@ public class Patient{
 	public void setWeight(double weight) {
 		this.weight=weight;
 		if(this.weight== -1|| this.weight==0 || this.weight>800) {
-			while(this.weight== -1) {
+			while(this.weight== -1|| this.weight==0 || this.weight>800) {
 				Scanner sc=new Scanner(System.in);
-				System.out.println("Please enter a valid weight: ");
+				System.out.print("Please enter a valid weight: ");
 				this.weight=sc.nextDouble();
 			}
 		}

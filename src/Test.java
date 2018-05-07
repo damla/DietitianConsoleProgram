@@ -50,14 +50,24 @@ public class Test{
 			  
 			  //console app starts here.
 			  Scanner sc = new Scanner(System.in);
-			  int choice=0;
-			  int choice2=0;
-			  String username="";
-			  int flag=0;
-			  int backupID=0;
+			 
 			  char ch='a';
-			  
 			  do{
+				  
+				  int choice=0;
+				  int choice2=0;
+				  int choice3=0;
+				  int choice4=0;
+				  String username="";
+				  int flag=0;
+				  int backupID=0;
+				  String nName="";
+				  String nSurname="";
+				  String nPhoneNo="";
+				  String nBirthdate="";
+				  double nWeight=0;
+				  double nHeight=0;
+				  
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
 					   "\n *Select (1) to get patient's information."+
@@ -105,10 +115,105 @@ public class Test{
 		            	}
 		            	//sub menu selection for user
 		            	if(choice2 == 1) {
+		            		System.out.println("-----------------------------------------------");
+		            		System.out.println(ml.get(backupID-1));
+		            		System.out.println("-----------------------------------------------");
+		            		System.out.println("*Select (1) to make changes on patient's personel information." +
+		            						  "\n*Press 'Y' to go back to main menu or 'N' to end the program." );
 		            		
+		            		try {
+		            		choice3=sc.nextInt(); //sub choice
+		            		}catch(Exception e) {}
+		            		
+		            		if(choice3 == 1) {
+		            			System.out.println("-----------------------------------------------");
+		            			System.out.println("Please select the information you want to change:" +
+		            							"\n*Select (1) to change name."+
+		            							"\n*Select (2) to change surname."+
+		            							"\n*Select (3) to change phone number."+
+		            							"\n*Select (4) to change birthdate."+
+		            							"\n*Select (5) to change weight." +
+		            							"\n*Select (6) to change height.");
+		            			try {
+		            				choice4=sc.nextInt();
+		            			}catch(Exception e) {
+		            				System.out.println("-----------------------------------------------");
+		            				System.out.println("Your choice is not valid. Press 'Y' to go back to main menu or 'N' to end the program.");
+		            				}
+		            			if(choice4==1) {
+		            				System.out.println("-----------------------------------------------");
+		            				System.out.print("Please enter the new name: ");
+		            				nName=sc.next();
+		            				
+		            				ml.get(backupID-1).setpName(nName);
+		            				System.out.println("\nNew name: " + ml.get(backupID-1).getpName());
+		            				ml.get(backupID-1).setUsername();
+		            				System.out.println("New username: " + ml.get(backupID-1).getUsername());
+		            				System.out.println("\n" + ml.get(backupID-1));
+		            			}
+		            			else if(choice4==2) {
+		            				System.out.println("-----------------------------------------------");
+		            				System.out.print("Please enter the new surname: ");
+		            				nSurname=sc.next();
+		            				
+		            				ml.get(backupID-1).setpSurname(nSurname);
+		            				System.out.println("\nNew surname: " + ml.get(backupID-1).getpSurname());
+		            				
+		            				ml.get(backupID-1).setUsername();
+		            				System.out.println("New username: " + ml.get(backupID-1).getUsername());
+		            				System.out.println("\n" + ml.get(backupID-1));
+		            			}
+		            			else if(choice4==3) {
+		            				System.out.println("-----------------------------------------------");
+		            				System.out.print("Please enter the new phone number: ");
+		            				nPhoneNo=sc.next();
+		            				
+		            				ml.get(backupID-1).setPhoneNo(nPhoneNo);
+		            				System.out.println("\nNew phone no: " + ml.get(backupID-1).getPhoneNo());
+		            			}
+		            			else if(choice4==4) {
+		            				System.out.println("-----------------------------------------------");
+		            				System.out.print("Please enter the new birthdate: ");
+		            				nBirthdate=sc.next();
+		            				
+		            				ml.get(backupID-1).setBirthday(nBirthdate);
+		            				System.out.println("\nNew birthdate: " + ml.get(backupID-1).getBirthday());
+		            			}
+		            			else if(choice4==5) {
+		            				System.out.println("-----------------------------------------------");
+		            				System.out.print("Please enter the new weight: ");
+		            				try {
+		            				nWeight=sc.nextDouble();
+		            				}catch(Exception e) {
+		            					System.out.println("Weight is not valid. Do you want to restart?");
+		            				}
+		            				ml.get(backupID-1).setWeight(nWeight);
+		            				System.out.println("\nNew weight: " + ml.get(backupID-1).getWeight());
+		            				
+		            				ml.get(backupID-1).setBmi();
+		            				System.out.println("New bmi: " + ml.get(backupID-1).getBmi());
+		            				System.out.println("\n" + ml.get(backupID-1));
+		            			}
+		            			else if(choice4==6) {
+		            				System.out.println("-----------------------------------------------");
+		            				System.out.print("Please enter the new height: ");
+		            				try {
+		            				nHeight=sc.nextDouble();
+		            				}catch(Exception e) {
+		            					System.out.println("Height is not valid. Do you want to restart?");
+		            				}
+		            				ml.get(backupID-1).setHeight(nHeight);
+		            				System.out.println("\nNew height: " + ml.get(backupID-1).getHeight());
+		            				
+		            				ml.get(backupID-1).setBmi();
+		            				System.out.println("New bmi: " + ml.get(backupID-1).getBmi());
+		            				System.out.println("\n" + ml.get(backupID-1));
+		            			}
+		            		}
 		            	}
-		            	else if(choice2 == 2) {}
-		            	else if(choice2 == 3) {}
+		            	//personal information of patient done
+		            	else if(choice2 == 2) {}//appointment of patient
+		            	else if(choice2 == 3) {}//dietlist of patient
 		            	
 		            	else
 		            	System.out.println("Your selection is not valid. Do you want to restart?");
