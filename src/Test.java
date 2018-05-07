@@ -305,17 +305,22 @@ public class Test{
 			  
 			  //Second choice: See appointments
 			  else if(choice==2) {
-				  for (int i = 0; i < ml.size(); i++) 
-				  {
-					  	if (ml!=null) 
-						System.out.println(ml.get(i).getpName() + "  "+  ml.get(i).getpSurname() + " -----> "
-	                    											  + ml.get(i).getDateAppointment()
-	                    											  + "  " 
-	                    											  + ml.get(i).getTimeAppointment()+"");
-	                    				
-					  	else 
-						 System.out.println("There are no patients with appointments."); 
-					}
+				  if(ml!=null)
+					  for (int i = 0; i < ml.size(); i++) 
+					  {
+						  		System.out.println();
+								System.out.println(ml.get(i).getpName() +"   "+  ml.get(i).getpSurname() + " -----> "
+																			  + ml.get(i).getDateAppointment()
+																			  + "   " 
+																			  + ml.get(i).getTimeAppointment()+" ");
+					  }
+			
+							else
+								
+								System.out.println("There are no patients with appointments."); 
+								System.out.println("-----------------------------------------------");
+								System.out.println("Do you want to continue"); 
+								System.out.println("-----------------------------------------------");
 			  }
 			  //Third choice: Create or Delete new patient
 			  else if(choice==3) {
