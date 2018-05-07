@@ -317,7 +317,7 @@ public class Test{
 						 System.out.println("There are no patients with appointments."); 
 					}
 			  }
-			  //Third choice: Create new patient
+			  //Third choice: Create or Delete new patient
 			  else if(choice==3) {
 				  //ml.add(1, new Patient("Demet","Ozbay",45,1.55)); bu sekilde eklersek patient ismi sorunu kalmaz
 				  System.out.println("Selected 3");	  
