@@ -338,6 +338,8 @@ public class Test{
 				  if(choice2 == 1) {
 					  //patient add
 					  //degiskenler yarat bilgileri tek tek yerlestir ama en basinda id yi kaydetki yerine birini yerlestirebil.
+					  //tree kontrol et eksik id varsa onu kaydet, sonra linked listte o idyi atayarak yeni objeyi olustur. Yoksa, direk en son node'a ekle.
+					  
 					  System.out.println("Patient ekleme secildi");
 				  }
 				  
@@ -355,7 +357,8 @@ public class Test{
 			  
 			  ch = sc.next().charAt(0); //En son y secilmesi icin
 			  }while(ch=='y'||ch=='Y');
-			 			   
+			}
+		} 			   
 			/*  char ch;
 				do
 				   {
@@ -423,7 +426,7 @@ public class Test{
 			  else
 			  System.out.println(x + " is not in the tree");
 			  b.inorder(b.getRoot());
-			  
+			 
 			  System.out.println();
 			 
 			 
@@ -450,12 +453,7 @@ public class Test{
 			  System.out.println(x + " is not in the tree");
 			*/  
 			  
-	}
 
-}
-
-	
-	
 		//once linked list
 		//sonra tree
 		//en son console seceneklerini yonlendirme
