@@ -69,6 +69,7 @@ public class Test{
 				  double nHeight=0;
 				  String nAppDate="";
 				  String nAppTime="";
+				  String nDlist="";
 				  
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
@@ -121,13 +122,20 @@ public class Test{
 		            		System.out.println(ml.get(backupID-1));
 		            		System.out.println("-----------------------------------------------");
 		            		System.out.println("*Select (1) to make changes on patient's personel information." +
-		            						  "\n*Press 'Y' to go back to main menu or 'N' to end the program." );
+		            						 "\n*Press 'Y' to go back to main menu." );
 		            		
 		            		try {
 		            		choice3=sc.nextInt(); //sub choice
 		            		}catch(Exception e) {}
 		            		
 		            		if(choice3 == 1) {
+		            			System.out.println("-----------------------------------------------");
+		            			System.out.println("Name: " + ml.get(backupID-1).getpName()+
+		            							   "\nSurname: " + ml.get(backupID-1).getpSurname()+
+		            							   "\nPhone No: " + ml.get(backupID-1).getPhoneNo()+
+		            							   "\nBirthdate: " + ml.get(backupID-1).getBirthday()+
+		            							   "\nWeight: " + ml.get(backupID-1).getWeight()+
+		            							   "\nHeight: " + ml.get(backupID-1).getHeight());
 		            			System.out.println("-----------------------------------------------");
 		            			System.out.println("Please select the information you want to change:" +
 		            							"\n*Select (1) to change name."+
@@ -180,6 +188,9 @@ public class Test{
 		            				
 		            				ml.get(backupID-1).setBirthday(nBirthdate);
 		            				System.out.println("\nNew birthdate: " + ml.get(backupID-1).getBirthday());
+		            				
+		            				ml.get(backupID-1).setAge();
+		            				System.out.println("\nNew age: " + ml.get(backupID-1).getAge());
 		            			}
 		            			else if(choice4==5) {
 		            				System.out.println("-----------------------------------------------");
@@ -187,7 +198,7 @@ public class Test{
 		            				try {
 		            				nWeight=sc.nextDouble();
 		            				}catch(Exception e) {
-		            					System.out.println("Weight is not valid. Do you want to restart?");
+		            					System.out.println("Weight is not valid. Do you want to restart?(Press 'Y' or 'N')");
 		            				}
 		            				ml.get(backupID-1).setWeight(nWeight);
 		            				System.out.println("\nNew weight: " + ml.get(backupID-1).getWeight());
@@ -202,7 +213,7 @@ public class Test{
 		            				try {
 		            				nHeight=sc.nextDouble();
 		            				}catch(Exception e) {
-		            					System.out.println("Height is not valid. Do you want to restart?");
+		            					System.out.println("Height is not valid. Do you want to restart?(Press 'Y' or 'N')");
 		            				}
 		            				ml.get(backupID-1).setHeight(nHeight);
 		            				System.out.println("\nNew height: " + ml.get(backupID-1).getHeight());
@@ -212,11 +223,17 @@ public class Test{
 
 		            			}
 		            			else
-		            				System.out.println("Your selection is not valid. Do you want to restart?");
+		            				System.out.println("Your selection is not valid. Do you want to restart?(Press 'Y' or 'N')");
 		            		}
 		            	}
 		            	//personal information of patient done
+		            	
 		            	else if(choice2 == 2) {
+		            		System.out.println("-----------------------------------------------");
+	            			System.out.println("Name: " + ml.get(backupID-1).getpName()+
+     							   		   "\nSurname: " + ml.get(backupID-1).getpSurname()+
+	            							   "\nAppointment Date: " + ml.get(backupID-1).getDateAppointment()+
+	            							   "\nAppointment Time: " + ml.get(backupID-1).getTimeAppointment());	  
 		            		System.out.println("-----------------------------------------------");
 	            			System.out.println("Please select the information you want to change:" +
 	            							"\n*Select (1) to change appointment date."+
@@ -246,25 +263,34 @@ public class Test{
 	            				System.out.println("\nNew time of appointment: " + ml.get(backupID-1).getTimeAppointment());
 	            			}
 	            			else
-	            				System.out.println("Your selection is not valid. Do you want to restart?");
-		            	}//appointment of patient
+	            				System.out.println("Your selection is not valid. Do you want to restart?(Press 'Y' or 'N')");
+		            	}//appointment informations of patient done
 		            	
-		            	
-		            	
-		            	
-		            	
-		            	
-		            	
-		            	
-		            	else if(choice2 == 3) {}//dietlist of patient
+		            	else if(choice2 == 3) {
+		            		System.out.println("-----------------------------------------------");
+	            			System.out.println("Name: " + ml.get(backupID-1).getpName()+
+     							   		   "\nSurname: " + ml.get(backupID-1).getpSurname()+
+     							   		   "\nWeight: " + ml.get(backupID-1).getWeight()+
+         							       "\nHeight: " + ml.get(backupID-1).getHeight() +
+         							       "\nBmi: " + ml.get(backupID-1).getBmi()+
+           							       "\nDiet List: " + ml.get(backupID-1).getdList());
+		            		System.out.println("-----------------------------------------------");
+            				System.out.print("Please enter the new diet list of appointment: ");
+            				nDlist=sc.next();
+            				
+            				ml.get(backupID-1).setdList(nDlist);
+            				System.out.println("\nNew Diet List: " + ml.get(backupID-1).getdList());
+		            	}//dietlist information of patient done
 		            	
 		            	else
-		            	System.out.println("Your selection is not valid. Do you want to restart?");
+		            	System.out.println("Your selection is not valid. Do you want to restart?(Press 'Y' or 'N')");
+		            	
+		            	System.out.println("Do you want to continue? (Press 'Y' or 'N')");
 		          }
 		          else { //after non valid username.
 		        	  	username = "Username is not valid.";
 		        		System.out.println("-----------------------------------------------");
-		        	  	System.out.println("username: " + username + "Do you want to continue? ");
+		        	  	System.out.println("username: " + username + "Do you want to continue? (Press 'Y' or 'N')");
 					
 		          }
 		          //username check done.
@@ -294,7 +320,7 @@ public class Test{
 				  System.out.println("Selected 3");	  
 			  }
 			  else
-				  System.out.println("Your selection is not valid. Do you want to restart?");
+				  System.out.println("Your selection is not valid. Do you want to restart?(Press 'Y' or 'N')");
 			  
 			  ch = sc.next().charAt(0); //En son y secilmesi icin
 			  }while(ch=='y'||ch=='Y');

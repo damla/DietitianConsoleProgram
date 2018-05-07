@@ -294,7 +294,7 @@ public class Patient{
 				"\nAppointment Date: " + this.getDateAppointment() +
 				"\nAppointment Time: " + this.getTimeAppointment() +
 				"\nDiet List: " + this.dList +
-				"\nId: " + this.pId;;
+				"\nId: " + this.pId;
 		
 		if(this.age!=-1) 
 			control+="\nAge: "+ this.age;
