@@ -67,6 +67,8 @@ public class Test{
 				  String nBirthdate="";
 				  double nWeight=0;
 				  double nHeight=0;
+				  String nAppDate="";
+				  String nAppTime="";
 				  
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
@@ -149,7 +151,7 @@ public class Test{
 		            				System.out.println("\nNew name: " + ml.get(backupID-1).getpName());
 		            				ml.get(backupID-1).setUsername();
 		            				System.out.println("New username: " + ml.get(backupID-1).getUsername());
-		            				System.out.println("\n" + ml.get(backupID-1));
+
 		            			}
 		            			else if(choice4==2) {
 		            				System.out.println("-----------------------------------------------");
@@ -161,7 +163,7 @@ public class Test{
 		            				
 		            				ml.get(backupID-1).setUsername();
 		            				System.out.println("New username: " + ml.get(backupID-1).getUsername());
-		            				System.out.println("\n" + ml.get(backupID-1));
+
 		            			}
 		            			else if(choice4==3) {
 		            				System.out.println("-----------------------------------------------");
@@ -192,7 +194,7 @@ public class Test{
 		            				
 		            				ml.get(backupID-1).setBmi();
 		            				System.out.println("New bmi: " + ml.get(backupID-1).getBmi());
-		            				System.out.println("\n" + ml.get(backupID-1));
+
 		            			}
 		            			else if(choice4==6) {
 		            				System.out.println("-----------------------------------------------");
@@ -207,12 +209,53 @@ public class Test{
 		            				
 		            				ml.get(backupID-1).setBmi();
 		            				System.out.println("New bmi: " + ml.get(backupID-1).getBmi());
-		            				System.out.println("\n" + ml.get(backupID-1));
+
 		            			}
+		            			else
+		            				System.out.println("Your selection is not valid. Do you want to restart?");
 		            		}
 		            	}
 		            	//personal information of patient done
-		            	else if(choice2 == 2) {}//appointment of patient
+		            	else if(choice2 == 2) {
+		            		System.out.println("-----------------------------------------------");
+	            			System.out.println("Please select the information you want to change:" +
+	            							"\n*Select (1) to change appointment date."+
+	            							"\n*Select (2) to change appointment time.");
+	            			
+	            			try {
+	            				choice3=sc.nextInt();
+	            			}catch(Exception e) {
+	            				System.out.println("-----------------------------------------------");
+	            				System.out.println("Your choice is not valid. Press 'Y' to go back to main menu or 'N' to end the program.");
+	            				}
+	            			
+	            			if(choice3==1) {
+	            				System.out.println("-----------------------------------------------"); //BURAYA YAZILACAK TARIH DOLU MU DIYE KONTROL EKLENEBILIR?
+	            				System.out.print("Please enter the new date of appointment: ");
+	            				nAppDate=sc.next();
+	            				
+	            				ml.get(backupID-1).setDateAppointment(nAppDate);
+	            				System.out.println("\nNew date of appointment: " + ml.get(backupID-1).getDateAppointment());
+	            			}
+	            			else if(choice3==2) {
+	            				System.out.println("-----------------------------------------------"); //BURAYA YAZILACAK TARIH DOLU MU DIYE KONTROL EKLENEBILIR?
+	            				System.out.print("Please enter the new time of appointment: ");
+	            				nAppTime=sc.next();
+	            				
+	            				ml.get(backupID-1).setTimeAppointment(nAppTime);
+	            				System.out.println("\nNew time of appointment: " + ml.get(backupID-1).getTimeAppointment());
+	            			}
+	            			else
+	            				System.out.println("Your selection is not valid. Do you want to restart?");
+		            	}//appointment of patient
+		            	
+		            	
+		            	
+		            	
+		            	
+		            	
+		            	
+		            	
 		            	else if(choice2 == 3) {}//dietlist of patient
 		            	
 		            	else
