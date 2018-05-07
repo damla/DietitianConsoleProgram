@@ -94,7 +94,7 @@ public class Test{
 		        	  System.out.println("Please enter a valid username. Do you want to continue?");
 		          }
 		          for(int i=0; i<bst.findMax(bst.getRoot()); i++) { //root en buyuk idli olan yani son eklenen eleman oluyor. Eleman silerken id yerini
-		            													//doldurmamiz gerekiyor. 
+		            												  //doldurmamiz gerekiyor. 
 		        	  	if(ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
 		        	  		backupID=ml.get(i).getpId();
 		        	  		flag++;
@@ -324,7 +324,29 @@ public class Test{
 			  //Third choice: Create or Delete new patient
 			  else if(choice==3) {
 				  //ml.add(1, new Patient("Demet","Ozbay",45,1.55)); bu sekilde eklersek patient ismi sorunu kalmaz
-				  System.out.println("Selected 3");	  
+				  System.out.println("-----------------------------------------------");
+				  System.out.print("*Select (1) to add new patient."+
+						   			"\n*Select (2) to delete patient."+
+						  			"\nYour selection: ");
+				  try {
+					  choice2=sc.nextInt();
+					  } catch(Exception e){
+						  System.out.println("-----------------------------------------------");
+						  System.out.println("Your selection is not valid. Do you want to restart?(Press 'Y' or 'N')");
+					  }
+				  
+				  if(choice2 == 1) {
+					  //patient add
+					  System.out.println("Patient ekleme secildi");
+				  }
+				  
+				  else if(choice2 == 2) {
+					  //patient delete
+					  System.out.println("Patient silme secildi");
+				  }
+				  
+				  else
+					  System.out.println("Your selection is not valid. Do you want to restart?(Press 'Y' or 'N')");
 			  }
 			  else
 				  System.out.println("Your selection is not valid. Do you want to restart?(Press 'Y' or 'N')");
