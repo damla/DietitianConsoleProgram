@@ -316,8 +316,7 @@ public class Test{
 																			  + ml.get(i).getTimeAppointment()+" ");
 					  }
 			
-							else			
-								
+							else				
 								System.out.println("There are no patients with appointments. Do you want to restart?(Press 'Y' or 'N')"); 
 
 								
