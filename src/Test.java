@@ -305,6 +305,7 @@ public class Test{
 			  
 			  //Second choice: See appointments
 			  else if(choice==2) {
+				  System.out.println("-----------------------------------------------");
 				  if(ml!=null)
 					  for (int i = 0; i < ml.size(); i++) 
 					  {
@@ -317,10 +318,9 @@ public class Test{
 			
 							else			
 								
-								System.out.println("There are no patients with appointments."); 
-								System.out.println("-----------------------------------------------");
-								System.out.println("Do you want to continue"); 
-								System.out.println("-----------------------------------------------");
+								System.out.println("There are no patients with appointments. Do you want to restart?(Press 'Y' or 'N')"); 
+
+								
 			  }
 			  //Third choice: Create or Delete new patient
 			  else if(choice==3) {
