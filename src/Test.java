@@ -73,7 +73,7 @@ public class Test{
 				  
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
 					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
-					   "\n *Select (1) to get patient's information."+
+					   "\n *Select (1) to get patient's general information."+
 					   "\n *Select (2) to see appoinments."+
 					   "\n *Select (3) to create new patient or delete."+
 					   "\nYour selection: ");
