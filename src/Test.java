@@ -51,6 +51,7 @@ public class Test{
 			  //console app starts here.
 			  Scanner sc = new Scanner(System.in);
 			  int choice=0;
+			  int choice2=0;
 			  String username="";
 			  int flag=0;
 			  int backupID=0;
@@ -93,10 +94,24 @@ public class Test{
 		            	System.out.println("-----------------------------------------------");
 		            	System.out.print("Please select which information you want to see:" +
 		 					   "\n *Select (1) to get personel information of "+ml.get(backupID-1).getpName()+" "+ml.get(backupID-1).getpSurname()+
-		 					   "\n *Select (2) to see appoinments." +
-		 					   "\n *Select (3) to create new patient or delete."+
+		 					   "\n *Select (2) to see appoinments of " + ml.get(backupID-1).getpName()+ " " +ml.get(backupID-1).getpSurname()+
+		 					   "\n *Select (3) to see diet list of " + ml.get(backupID-1).getpName()+ " " +ml.get(backupID-1).getpSurname()+
 		 					   "\nYour selection: ");
+		            	try {
+		            		choice2=sc.nextInt();
+		            	}catch(Exception e) {
+		            		System.out.println("-----------------------------------------------");
+		  				System.out.println("Your selection is not valid.");
+		            	}
+		            	//sub menu selection for user
+		            	if(choice2 == 1) {
+		            		
+		            	}
+		            	else if(choice2 == 2) {}
+		            	else if(choice2 == 3) {}
 		            	
+		            	else
+		            	System.out.println("Your selection is not valid. Do you want to restart?");
 		          }
 		          else { //after non valid username.
 		        	  	username = "Username is not valid.";
