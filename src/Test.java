@@ -190,7 +190,10 @@ public class Test{
 		            				System.out.println("\nNew birthdate: " + ml.get(backupID-1).getBirthday());
 		            				
 		            				ml.get(backupID-1).setAge();
+		            				if(!ml.get(backupID-1).getBirthday().equals("Birthdate is not valid."))
 		            				System.out.println("\nNew age: " + ml.get(backupID-1).getAge());
+		            				else
+		            					ml.get(backupID-1).setAgeDetail(-1);
 		            			}
 		            			else if(choice4==5) {
 		            				System.out.println("-----------------------------------------------");

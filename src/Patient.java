@@ -170,7 +170,9 @@ public class Patient{
 			this.age=-1;
 		}
 	}	
-
+	public void setAgeDetail(int age) {
+	this.age=age;	
+	}
 	//age get set done
 	public String getPhoneNo() {
 		return phoneNo;
@@ -307,7 +309,6 @@ public class Patient{
 		
 		if(this.bmi!=-1 || this.bmi!= 0.0)
 			control+= "\nBmi: "+ this.bmi;
-		
 		return control;
 	}
 	
