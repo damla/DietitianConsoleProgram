@@ -327,11 +327,18 @@ public class Test{
          							       "\nBmi: " + ml.get(backupID-1).getBmi()+
            							       "\nDiet List: " + ml.get(backupID-1).getdList());
 		            		System.out.println("-----------------------------------------------");
-            				System.out.print("Please enter the new diet list of appointment: ");
+            				System.out.print("Please enter the new diet list of patient: ");
             				nDlist=sc.next();
             				
+            				if(nDlist.equals(" ") || nDlist.equals("")) {
+            					nDlist="No diet list found for this patient.";	
+            					ml.get(backupID-1).setdList(nDlist);
+            				}
+            				else 
             				ml.get(backupID-1).setdList(nDlist);
+            				
             				System.out.println("\nNew Diet List: " + ml.get(backupID-1).getdList());
+            				
 		            	}//dietlist information of patient done
 		            	
 		            	else
@@ -397,14 +404,35 @@ public class Test{
 					  //degiskenler yarat bilgileri tek tek yerlestir ama en basinda id yi kaydetki yerine birini yerlestirebil.
 					  //tree kontrol et eksik id varsa onu kaydet, sonra linked listte o idyi atayarak yeni objeyi olustur. Yoksa, direk en son node'a ekle.
 					  System.out.println("-----------------------------------------------");
+					  
 					  System.out.print("Please write the name of new patient: ");
-					  System.out.print("Please write the surname of new patient: ");
-					  System.out.print("Please write the weight of new patient: ");
-					  System.out.print("Please write the height of new patient: ");
-					  System.out.print("Please write the birthdate of new patient: ");
-					  System.out.print("Please write the phone number of new patient: ");
-					  System.out.print("Please write the appointment date of new patient: ");
-					  System.out.print("Please write the appointment time of new patient: ");
+					  nName=sc.next();
+					  
+					  System.out.print("\nPlease write the surname of new patient: ");
+					  nSurname=sc.next();
+					  
+					  System.out.print("\nPlease write the weight of new patient: ");
+					  nWeight=sc.nextDouble();
+					  
+					  System.out.print("\nPlease write the height of new patient: ");
+					  nHeight=sc.nextDouble();
+					  
+					  System.out.print("\nPlease write the birthdate of new patient: ");
+					  nBirthdate=sc.next();
+					  
+					  System.out.print("\nPlease write the phone number of new patient: ");
+					  nPhoneNo=sc.next();
+					  
+					  System.out.print("\nPlease write the diet list of new patient: ");
+					  nDlist=sc.next();
+					  
+					  System.out.print("\nPlease write the appointment date of new patient: ");
+					  nAppDate=sc.next();
+					  
+					  System.out.print("\nPlease write the appointment time of new patient: ");
+					  nAppTime=sc.next();
+					  
+					  
 				  }
 				  
 				  else if(choice2 == 2) {
