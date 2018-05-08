@@ -1,4 +1,5 @@
 //These codes are taken from our teacher's slides.
+// max and min methods https://www.geeksforgeeks.org/find-maximum-or-minimum-in-binary-tree/
 public class BinarySearchTree {
 
 	private TreeNode root;
@@ -149,6 +150,22 @@ public class BinarySearchTree {
 		        if (rres > res)
 		            res = rres;
 		        return res;
+		    }
+		  
+		  public int findMin(TreeNode root)
+		    {
+			  if (root == null)
+			        return Integer.MAX_VALUE;
+			 
+			    int res = root.getElement();
+			    int lres = findMin(root.getLeft());
+			    int rres = findMin(root.getRight());
+			 
+			    if (lres < res)
+			        res = lres;
+			    if (rres < res)
+			        res = rres;
+			    return res;
 		    }
 }
 /*--Methods--

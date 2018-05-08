@@ -282,7 +282,7 @@ public class Patient{
 		this.setDateAppointment("");
 		this.setTimeAppointment("");
 		this.setdList("");
-		this.setAge();
+		this.setAgeDetail(-1);
 		this.setPhoneNo("");
 	}
 	
