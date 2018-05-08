@@ -437,17 +437,18 @@ public class Test{
 						  for(int i=1; i<= bst.findMax(bst.getRoot()); i++) {
 							 
 							 if( save.search(i) ) { //looking for the id deleted first
-								 ml.add(i,new Patient(nName, nSurname, nWeight, nHeight));
-								 ml.get(i).setPhoneNo(nPhoneNo);
-								 ml.get(i).setBirthday(nBirthdate);
-								 ml.get(i).setdList(nDlist);
-								 ml.get(i).setDateAppointment(nAppDate);
-								 ml.get(i).setTimeAppointment(nAppTime);
-								 ml.get(i).setpId(i);
-								 ml.get(i).setUsername();
+								 ml.add(i-1,new Patient(nName, nSurname, nWeight, nHeight));
+								 ml.get(i-1).setPhoneNo(nPhoneNo);
+								 ml.get(i-1).setBirthday(nBirthdate);
+								 ml.get(i-1).setdList(nDlist);
+								 ml.get(i-1).setDateAppointment(nAppDate);
+								 ml.get(i-1).setTimeAppointment(nAppTime);
+								 ml.get(i-1).setpId(i);
+								 ml.get(i-1).setUsername();
 								 //new patient created to the first place.
 								 bst.insert(i);
 								 save.delete(i);
+								
 								 break;
 							 }
 							 
