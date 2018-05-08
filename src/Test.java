@@ -16,7 +16,30 @@ public class Test{
 			  a.setPhoneNo("0(212)222-2222");
 			  a.setDateAppointment("10/04/2018");
 			  a.setTimeAppointment("10:30");
-			  a.setdList("Mukemmel,gerek yok.");
+			  a.setdList("Sabah Kahvaltı;\n" + 
+			  		"\n" + 
+			  		"1 dilim kepek ekmeği\n" + 
+			  		"1 dilim beyaz peynir\n" + 
+			  		"Bol domates\n" + 
+			  		"Salatalık\n" + 
+			  		"Ara Öğün;\n" + 
+			  		"\n" + 
+			  		"1 adet meyve\n" + 
+			  		"Öğlen Yemeği;\n" + 
+			  		"\n" + 
+			  		"100gr. Yağsız etli salata\n" + 
+			  		"1 kase light yoğurt\n" + 
+			  		"1 kase çorba\n" + 
+			  		"Ara Öğün;\n" + 
+			  		"\n" + 
+			  		"1 adet meyve\n" + 
+			  		"2 ceviz, 6 fındık veya badem\n" + 
+			  		"Akşam Yemeği;\n" + 
+			  		"\n" + 
+			  		"7 yemek kaşığı etsiz sebze yemeği\n" + 
+			  		"1 ince dilim kepek ekmeği\n" + 
+			  		"Salata\n" + 
+			  		"1 kase light yoğurt");
 			  ml.add(a); //added to index #0 of linked list.
 			  bst.insert(a.getpId()); //added the id to binary search tree.
 			  
@@ -35,18 +58,30 @@ public class Test{
 			  d.setPhoneNo("0(212)211-1111");
 			  d.setDateAppointment("15/04/2018");
 			  d.setTimeAppointment("11:30");
-			  d.setdList("sabah---ogle---aksam");
+			  d.setdList("Sabah\n" + 
+			  		"\n" + 
+			  		"Mısır gevreği\n" + 
+			  		"1 kase yağsız yoğurt\n" + 
+			  		"Taze meyve veya taze sıkılmış portakal suyu\n" + 
+			  		"Kafeinsiz kahve veya şekersiz çay\n" + 
+			  		"\n" + 
+			  		"Öğle\n" + 
+			  		"\n" + 
+			  		"Fırında kızartılmış patates\n" + 
+			  		"Brokoli, marul, karnabahar ve nohuttan oluşan bir salata (üzerine limon olabilir)\n" + 
+			  		"Taze meyve veya meyve suyu\n" + 
+			  		"\n" + 
+			  		"Akşam\n" + 
+			  		"\n" + 
+			  		"Haşlanmış makarna üzerine de yeşil dolma biber\n" + 
+			  		"Haşlanmış fasulye\n" + 
+			  		"Karışık yeşil salata (üzerine sarımsaklı, limonlu bir sos hazırlayabilirsiniz.)\n" + 
+			  		"1 adet şeftali\n" + 
+			  		"\n" + 
+			  		"Ara öğünlerde ihtiyaç duyarsanız herhangi bir mevsim meyvesi tüketebilirsiniz.");
 			  ml.add(d.getpId()-1,d);
 			  bst.insert(d.getpId());
 			  
-			  
-			 /*for (Patient element : ml)
-			      System.out.println(element + "\n");
-			  
-			  System.out.println("inorder print binary:");
-			  bst.inorder(bst.getRoot());
-			  Bulunan hastalari ve treeyi dokmek icin
-			 */
 			  
 			  //console app starts here.
 			  Scanner sc = new Scanner(System.in);
@@ -79,7 +114,7 @@ public class Test{
 				  int unvalid2=0;
 				  
 			  System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
-					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
+					   "\nOur console application is working with numbers so you have to select which way you want to go by numbers. "+
 					   "\n *Select (1) to get patient's general information."+
 					   "\n *Select (2) to see appoinments."+
 					   "\n *Select (3) to create new patient or delete."+
@@ -94,7 +129,7 @@ public class Test{
 			  //First choice: Patient's information.
 			  if(choice==1) {
 				  System.out.println("-----------------------------------------------");
-				  System.out.println("Please enter the username of patient: ");   
+				  System.out.print("Please enter the username of patient: ");   
 				  try {  
 				  username=sc.next();
 		          }catch(Exception e) {
@@ -257,7 +292,7 @@ public class Test{
 	            				}
 	            			
 	            			if(choice3==1) {
-	            				System.out.println("-----------------------------------------------"); //BURAYA YAZILACAK TARIH DOLU MU DIYE KONTROL EKLENEBILIR?
+	            				System.out.println("-----------------------------------------------"); 
 	            				System.out.print("Please enter the new date of appointment: ");
 	            				nAppDate=sc.next();
 
@@ -289,12 +324,9 @@ public class Test{
 	            				
 	            			}
 	            			else if(choice3==2) {
-	            				System.out.println("-----------------------------------------------"); //BURAYA YAZILACAK TARIH DOLU MU DIYE KONTROL EKLENEBILIR?
+	            				System.out.println("-----------------------------------------------"); 
 	            				System.out.print("Please enter the new time of appointment: ");
 	            				nAppTime=sc.next();
-	            				
-	            				//ml.get(backupID-1).setTimeAppointment(nAppTime);
-	            				//System.out.println("\nNew time of appointment: " + ml.get(backupID-1).getTimeAppointment());
 	            				
 	            				for(int j=0; j<bst.findMax(bst.getRoot()); j++) {
 	            					
@@ -330,11 +362,11 @@ public class Test{
             				System.out.print("Please enter the new diet list of patient: ");
             				nDlist=sc.next();
             				
-            				if(nDlist.equals(" ") || nDlist.equals("")) {
+            				if(nDlist.equals(" ") || nDlist.equals("") || nDlist.equals("-")) {
             					nDlist="No diet list found for this patient.";	
             					ml.get(backupID-1).setdList(nDlist);
             				}
-            				else 
+            				else
             				ml.get(backupID-1).setdList(nDlist);
             				
             				System.out.println("\nNew Diet List: " + ml.get(backupID-1).getdList());
@@ -355,10 +387,6 @@ public class Test{
 		          //username check done.
 		          
 			   }
-
-			  //linked list 0 1 2 3 4 5
-			  //binary tree 1 2 3 4 5 6 idler
-			  //roota(en buyuk id) kadar kontrol et bosluk varsa doldur yoksa sona ekle! Ona gore linkede ekle
 			  
 			  //Second choice: See appointments
 			  else if(choice==2) {
@@ -387,7 +415,6 @@ public class Test{
 			  //Third choice: Create or Delete new patient
 			  else if(choice==3) {
 				 
-				  //ml.add(1, new Patient("Demet","Ozbay",45,1.55)); bu sekilde eklersek patient ismi sorunu kalmaz
 				  System.out.println("-----------------------------------------------");
 				  System.out.print("*Select (1) to add new patient."+
 						   			"\n*Select (2) to delete patient."+
@@ -401,8 +428,7 @@ public class Test{
 				  
 				  if(choice2 == 1) { //Burdan once silmeye bakin
 					  //patient add
-					  //degiskenler yarat bilgileri tek tek yerlestir ama en basinda id yi kaydetki yerine birini yerlestirebil.
-					  //tree kontrol et eksik id varsa onu kaydet, sonra linked listte o idyi atayarak yeni objeyi olustur. Yoksa, direk en son node'a ekle.
+
 					  System.out.println("-----------------------------------------------");
 					  
 					  System.out.print("Please write the name of new patient: ");
@@ -423,8 +449,6 @@ public class Test{
 					  System.out.print("\nPlease write the phone number of new patient: ");
 					  nPhoneNo=sc.next();
 					  
-					  System.out.print("\nPlease write the diet list of new patient: ");
-					  nDlist=sc.next();
 					  
 					  System.out.print("\nPlease write the appointment date of new patient: ");
 					  nAppDate=sc.next();
@@ -432,8 +456,9 @@ public class Test{
 					  System.out.print("\nPlease write the appointment time of new patient: ");
 					  nAppTime=sc.next();
 					 
+					  
 					  if(save.getSize()>0) { //if there are any deleted elements, we can see it from save tree.
-						  //listenin maximumundan maximum idyi bul sonra elementleri geze geze eksik idyi bul
+
 						  for(int i=1; i<= bst.findMax(bst.getRoot()); i++) {
 							 
 							 if( save.search(i) ) { //looking for the id deleted first
@@ -465,6 +490,9 @@ public class Test{
 								 bst.insert(ml.getLast().getpId());
 								 
 						  }
+					  System.out.println("-----------------------------------------------");
+					  System.out.println("               NEW PATIENT LIST");
+					  System.out.println("-----------------------------------------------");
 					  for (Patient element : ml)
 						  System.out.println(element + "\n");
 				  }
@@ -472,7 +500,6 @@ public class Test{
 				  else if(choice2 == 2) {
 					 
 					  //patient delete
-					  //sildigimiz konumu kaydedelim. bunu yapmak icin degiskeni dongu disinda tanimalayalim?
 					  System.out.println("-----------------------------------------------");
 					  System.out.println("Please write the ID of patient you want to delete: ");
 					  try {
@@ -481,9 +508,9 @@ public class Test{
 							  System.out.println("-----------------------------------------------");
 							  System.out.println("The ID you entered is not valid. Do you want to restart?(Press 'Y' or 'N')");
 						  }
-					  //nID KAYDET diyelim 5
-					  max=bst.findMax(bst.getRoot()); //4
-					  min=bst.findMin(bst.getRoot()); //1
+
+					  max=bst.findMax(bst.getRoot()); 
+					  min=bst.findMin(bst.getRoot()); 
 					  
 					  if(max<nId || nId<min) {
 						  System.out.println("Your selection is not valid. Do you want to restart?(Press 'Y' or 'N')");
@@ -522,197 +549,4 @@ public class Test{
 			  }while(ch=='y'||ch=='Y');
 			}
 		} 			   
-			/*
-			 * for(int i=0; i<bst.findMax(bst.getRoot()); i++) { // butun treeyi geziyor
-						  //doldurmamiz gerekiyor. 
-						  if(ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
-							  backupID=ml.get(i).getpId();
-							  flag++;
-						  } } 		
-			 *   
-			 *   
-			 *   
-			 *   char ch;
-				do
-				   {
-				System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
-								   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
-								   "\n *Select (1) to get patient's information."+
-								   "\n *Select (2) to see appoinments."+
-								   "\n *Select (3) to create new patient."+
-								   "\nYour selection: ");
-				String username;
-				Scanner sc=new Scanner(System.in);
-				int choice = sc.nextInt();            
-		        switch (choice)
-		        {
 		       
-		        case 1 : 
-		            System.out.println("Please enter the username of patient: ");
-		            username=sc.nextLine();
-		            
-		            for(int i=0; i<bst.getRoot().getElement(); i++) { //root ve id iliskisini coz.
-		            		if(!ml.get(i).getUsername().equals(username)){ //donguyu onlari kullanarak karsilastir.
-		            			username="Not valid.";
-		            		}
-		            		}
-		            
-		   
-		            break;
-		        
-		        case 2 : 
-		            System.out.println("2 yi secti");
-		            
-		            break;                         
-		        
-		        case 3 : 
-		            System.out.println("3 u secti");
-		        
-		            break;                                          
-		        
-		        default : 
-		            System.out.println("Please select an option from the list belove. \n ");
-		            System.out.println("\nDo you want to continue (Type y or n) \n");
-		            break;
-		        }    
-		        ch = sc.next().charAt(0);
-		    } while (ch == 'Y'|| ch == 'y');   
-			
-		*/
-			  
-			  
-			  
-			  
-			/*
-			  b.insert(d.getpId());
-			  b.insert(2);
-			  b.insert(3);
-			  System.out.println("inorder traversal:");
-			  b.inorder(b.getRoot());
-			  System.out.println();
-			  
-			  System.out.println("number of nodes in the tree: " + b.getSize());
-			  System.out.println("Enter a number to delete from the tree: ");
-			  x = d.getpId();
-			  if(b.delete(x)) //true gelirse
-			  System.out.println(x + " is deleted from the tree.");
-			  else
-			  System.out.println(x + " is not in the tree");
-			  b.inorder(b.getRoot());
-			 
-			  System.out.println();
-			 
-			 
-
-			   ml.add(d);
-			   ml.add(1, new Patient("Demet","Ozbay",45,1.55));
-			   if(!b.search(d.getpId()))
-				  ml.remove(d.getpId()-1);
-			    for (Patient element : ml)
-			      System.out.println(element + "\n");	  */
-			/*  System.out.println("Enter a number to delete from the tree: ");
-			  x = s.nextInt();
-			  if(b.delete(x))
-			  System.out.println(x + " is deleted from the tree.");
-			  else
-			  System.out.println(x + " is not in the tree");
-			  System.out.println("inorder traversal after delete:");
-			  b.inorder(b.getRoot());
-			  System.out.println("\nEnter a number to search in the tree: ");
-			  x = s.nextInt();
-			  if(b.search(x))
-			  System.out.println(x + " is in the tree.");
-			  else
-			  System.out.println(x + " is not in the tree");
-			*/  
-			  
-
-		//once linked list
-		//sonra tree
-		//en son console seceneklerini yonlendirme
-		
-	/* 3.TEST System.out.println("Linked Listimiz:");
-			
-		
-		
-		
-		char ch;
-		do
-		   {
-		System.out.print("Welcome to the Patient Customize for Dietitian Program!" +
-						   "\nOur console application is working with numbers so you have to select which way you want to go by numbers."+
-						   "\n *Select (1) to get patient's information."+
-						   "\n *Select (2) to see appoinments."+
-						   "\n *Select (3) to create new patient."+
-						   "\nYour selection: ");
-		
-		Scanner sc=new Scanner(System.in);
-		int choice = sc.nextInt();            
-        switch (choice)
-        {
-       
-        case 1 : 
-            System.out.println("1 i secti");
-            
-            break;
-        
-        case 2 : 
-            System.out.println("2 yi secti");
-            
-            break;                         
-        
-        case 3 : 
-            System.out.println("3 u secti");
-        
-            break;                                          
-        
-        default : 
-            System.out.println("Please select an option from the list belove. \n ");
-            System.out.println("\nDo you want to continue (Type y or n) \n");
-            break;
-        }    
-        ch = sc.next().charAt(0);
-    } while (ch == 'Y'|| ch == 'y');   
-	}
-	
-} 3.TEST SONU*/
-		
- 	
-
-	
-
-	/* ILK TEST  
-	  public static void main(String[]args) {
-	 
-		//Test Starting here.	
-			//1st patient
-
-				Patient d=new Patient();
-				
-				d.setBirthday("10/10/1990");
-				d.setBmi();
-				d.setUsername();
-				d.setPhoneNo("0(212)222-2222");
-				d.setDateAppointment("");
-				d.setTimeAppointment("");
-				d.setdList("");
-				d.setWeight(50);
-				d.setHeight(1.61);
-				d.setBmi(); //!! dikkat height weight set edildikten sonra yap
-				System.out.println(d.toString());
-
-			System.out.println();
-
-				Patient o=new Patient("Yaprak", "Koksal", 54, 1.62);
-				//2nd patient
-				
-				o.setBirthday("10/10/2001");
-				o.setBmi();
-				o.setUsername();
-				System.out.println(o.toString()); 
-				System.out.println();
-	
-
-	}
-	  }ILK TEST SONU	*/
-

@@ -4,9 +4,7 @@ import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Patient{
-/* Sonradan eklenebilecekler:
- *weight,height icin kontrol.
-*/
+
 	private static AtomicInteger uniqueId=new AtomicInteger(); //for the delete of users, we can maybe use decrease property of AtomicInteger.
 	private String pName="";
 	private String pSurname="";
@@ -125,7 +123,7 @@ public class Patient{
 	}
 	
 	public int birthYear=0; //to calculate age
-	public void setBirthday(String date) { //date set ettirirken formati oncesinde belirt, ona gore setlensin.
+	public void setBirthday(String date) { 
 		try {
 			
 			SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
@@ -179,7 +177,7 @@ public class Patient{
 	}
 	public void setPhoneNo(String phoneNo) {
 
-		String pattern = "^[0]\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$" ; //Regex for phone numbers WITHOUT ZERO.
+		String pattern = "^[0]\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$" ; 
 		
 		if(phoneNo=="" || phoneNo==" " || !phoneNo.matches(pattern))  //Turns until the true number entered.
 			this.phoneNo="Phone number is not valid.";
@@ -209,7 +207,7 @@ public class Patient{
 	}
 
 	public void setdList(String dList) {
-		if(dList== null || dList=="" || dList==" ")
+		if(dList== null || dList=="" || dList==" " || dList=="-")
 			this.dList="List is empty.";
 		else
 			this.dList = dList;
