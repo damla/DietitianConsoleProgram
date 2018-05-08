@@ -375,13 +375,13 @@ public class Test{
 																			  + ml.get(i).getTimeAppointment()+" ");
 					  }
 			
-							else
+							else {
 
 								System.out.println();
 				  				System.out.println("-----------------------------------------------------------------------------------");
 								System.out.println("There are no patients with appointments. Do you want to restart? (Press 'Y' or 'N')"); 
 								System.out.println("-----------------------------------------------------------------------------------");
-
+							}
 								
 			  }
 			  //Third choice: Create or Delete new patient
@@ -399,7 +399,7 @@ public class Test{
 						  System.out.println("Your selection is not valid. Do you want to restart?(Press 'Y' or 'N')");
 					  }
 				  
-				  if(choice2 == 1) {
+				  if(choice2 == 1) { //Burdan once silmeye bakin
 					  //patient add
 					  //degiskenler yarat bilgileri tek tek yerlestir ama en basinda id yi kaydetki yerine birini yerlestirebil.
 					  //tree kontrol et eksik id varsa onu kaydet, sonra linked listte o idyi atayarak yeni objeyi olustur. Yoksa, direk en son node'a ekle.
@@ -431,8 +431,41 @@ public class Test{
 					  
 					  System.out.print("\nPlease write the appointment time of new patient: ");
 					  nAppTime=sc.next();
-					  
-					  
+					 
+					  if(save.getSize()>0) { //if there are any deleted elements, we can see it from save tree.
+						  //listenin maximumundan maximum idyi bul sonra elementleri geze geze eksik idyi bul
+						  for(int i=1; i<= bst.findMax(bst.getRoot()); i++) {
+							 
+							 if( save.search(i) ) { //looking for the id deleted first
+								 ml.add(i,new Patient(nName, nSurname, nWeight, nHeight));
+								 ml.get(i).setPhoneNo(nPhoneNo);
+								 ml.get(i).setBirthday(nBirthdate);
+								 ml.get(i).setdList(nDlist);
+								 ml.get(i).setDateAppointment(nAppDate);
+								 ml.get(i).setTimeAppointment(nAppTime);
+								 ml.get(i).setpId(i);
+								 ml.get(i).setUsername();
+								 //new patient created to the first place.
+								 bst.insert(i);
+								 save.delete(i);
+								 break;
+							 }
+							 
+						  	}
+						  
+						  }
+						  else {
+							  	 ml.addLast(new Patient(nName, nSurname, nWeight, nHeight));
+								 ml.getLast().setPhoneNo(nPhoneNo);
+								 ml.getLast().setBirthday(nBirthdate);
+								 ml.getLast().setdList(nDlist);
+								 ml.getLast().setDateAppointment(nAppDate);
+								 ml.getLast().setTimeAppointment(nAppTime);
+								 bst.insert(ml.getLast().getpId());
+								 
+						  }
+					  for (Patient element : ml)
+						  System.out.println(element + "\n");
 				  }
 				  
 				  else if(choice2 == 2) {
@@ -469,6 +502,7 @@ public class Test{
 					  	  
 							  System.out.println("Deleted ids: ");
 							  save.inorder(save.getRoot());
+							  
 							  for (Patient element : ml)
 								  System.out.println(element + "\n");
 						  }
