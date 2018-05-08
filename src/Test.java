@@ -354,7 +354,9 @@ public class Test{
 			  
 			  //Second choice: See appointments
 			  else if(choice==2) {
+				  
 				  System.out.println("-----------------------------------------------");
+				  
 				  if(ml!=null)
 					  for (int i = 0; i < ml.size(); i++) 
 					  {
@@ -365,8 +367,12 @@ public class Test{
 																			  + ml.get(i).getTimeAppointment()+" ");
 					  }
 			
-							else				
-								System.out.println("There are no patients with appointments. Do you want to restart?(Press 'Y' or 'N')"); 
+							else
+
+								System.out.println();
+				  				System.out.println("-----------------------------------------------------------------------------------");
+								System.out.println("There are no patients with appointments. Do you want to restart? (Press 'Y' or 'N')"); 
+								System.out.println("-----------------------------------------------------------------------------------");
 
 								
 			  }
